@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="relative bg-black-100 flex flex-col md:flex-row justify-center items-center max-w-[1200px] mx-auto sm:px-16 px-5 py-5">
+      <main className="relative flex flex-col md:flex-row justify-center items-center max-w-[1200px] mx-auto sm:px-16 px-5 py-5">
         {/* Hero Section */}
         <section className="w-full md:w-1/2 mb-5 md:mb-0 flex justify-center md:justify-start">
           <Image

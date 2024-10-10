@@ -1,47 +1,74 @@
 "use client";
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import { FaGithub } from "react-icons/fa";
 import { PinContainer } from "@/components/ui/3d-pin";
-import { projects } from "@/data";
+import { projects, companies, testimonials } from "@/data";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { FaLocationArrow } from "react-icons/fa6";
 
 const Projects = () => {
+  // Pagination state: current page, and projects per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 4;
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+  // Get current projects for pagination
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = projects.slice(
+    indexOfFirstProject,
+    indexOfLastProject
+  );
+
+  // Function to handle page changes
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <>
       <Navbar />
-      <h1 className="text-3xl md:text-6xl font-bold max-w-[1200px] mx-auto my-1 text-center">
+      <h1 className="text-[1.75rem] md:text-3xl lg:text-5xl font-bold max-w-[1200px] mx-auto my-3 text-center">
         Imagination Trumps Knowledge!
       </h1>
-      <main className="bg-black-100 max-w-[1200px] mx-auto sm:px-16 px-8">
+      <main className="max-w-[1200px] mx-auto sm:px-16 px-8 my-3">
         <section className="projects">
-          {/* Card */}
-          <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-2">
-            {projects.map(({ id, title, des, img, iconLists, link }) => (
+          {/* Card Section */}
+          <div className="flex flex-wrap items-center justify-center p-4 gap-x-28 gap-y-20 my-5">
+            {currentProjects.map(({ id, title, des, img, iconLists, link }) => (
               <div
                 key={id}
-                className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
+                className="sm:h-[30rem] h-[32rem] flex items-center justify-center sm:w-[500px] md:w-[350px] w-[80vw] max-w-[90vw]"
               >
                 <PinContainer title={link} href={link}>
-                  <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10">
-                    <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
-                      <img src="/bg.png" alt="bg-img" />
+                  <div className="relative flex items-center justify-center w-[400px] h-[20rem] sm:h-[20rem] mb-3">
+                    <div className="relative w-full h-full overflow-hidden rounded-ss-xl rounded-se-xl bg-[#13162d]">
+                      <Image
+                        src="/bg.png"
+                        alt="bg-img"
+                        layout="fill"
+                        objectFit="cover"
+                      />
                     </div>
-                    <img
+                    <Image
                       src={img}
                       alt={title}
                       className="z-10 absolute bottom-0"
+                      width={400}
+                      height={300}
                     />
                   </div>
-                  <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                  <h1 className="font-bold lg:text-2xl md:text-xl text-lg line-clamp-1">
                     {title}
                   </h1>
-
-                  <p className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2">
+                  <p className="md:text-lg font-light text-base line-clamp-2">
                     {des}
                   </p>
-
-                  <div className="flex items-center justify-between mt-7 mb-3">
+                  <div className="flex items-center justify-between my-3">
                     <div className="flex items-center">
                       {iconLists.map((icon, index) => (
                         <div
@@ -51,16 +78,13 @@ const Projects = () => {
                             transform: `translateX(-${5 * index * 2}px)`,
                           }}
                         >
-                          <img src={icon} alt={icon} className="p-2" />
+                          <Image src={icon} alt={icon} width={24} height={24} />
                         </div>
                       ))}
                     </div>
-
                     <div className="flex justify-center items-center">
-                      <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                        Check Live Site
-                      </p>
-                      {/* <FaLocationArrow className="ms-3" color="#CBACF9" /> */}
+                      <p className="flex lg:text-lg text-sm">Check Live Site</p>
+                      <FaLocationArrow className="ml-1 text-sm lg:text-lg" />
                     </div>
                   </div>
                 </PinContainer>
@@ -68,56 +92,38 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Card */}
-          {/* <PinContainer
-            title="/ui.aceternity.com"
-            href="https://twitter.com/mannupaaji"
-          >
-            <div className="flex flex-col col-span-4 justify-center items-center gap-3 px-2 py-4 border-border border-2 rounded-3xl shadow-[8px_8px_15px_rgba(255,255,255,0.5)] w-[25rem]">
-              <Image
-                src="/images/projects/crypto-screener-cover-image.jpg"
-                alt="Profile picture of the developer"
-                width={400}
-                height={300}
-                className="object-cover rounded-2xl"
-              />
-
-              <div className="w-full space-y-6">
-                <h1 className="font-semibold text-2xl lg:text-3xl tracking-wide">
-                  Turning Vision Into Reality With Code And Design.
-                </h1>
-
-                <p className="my-6 text-gray-500">
-                  As a skilled full-stack developer, I am dedicated to turning
-                  ideas into innovative web applications. Explore my latest
-                  projects and articles, showcasing my expertise in React.js and
-                  web development.
-                </p>
-
-                <div className="flex items-center space-x-4">
-                  <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-4xl cursor-pointer"
-                    label="GitHub"
-                  >
-                    <FaGithub />
-                  </a>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-primary text-secondary font-semibold rounded-md p-2 inline-flex items-center hover:text-gray-300 transition"
-                  >
-                    visit project
-                  </a>
-                </div>
-              </div>
-            </div>
-          </PinContainer> */}
+          {/* Pagination Controls */}
+          <div className="flex justify-center items-center space-x-4 mt-10">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index + 1}
+                onClick={() => handlePageChange(index + 1)}
+                className={`p-2 px-4 rounded-md ${
+                  currentPage === index + 1
+                    ? "bg-purple-500 text-white"
+                    : "bg-gray-200 text-black"
+                }`}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
         </section>
-        <section className="clients"></section>
+
+        {/* Client Section */}
+        <section className="clients mt-10">
+          <h3 className="text-2xl font-bold text-center mb-3">
+            Kind words from satisfied clients
+          </h3>
+
+          <div className="flex flex-col items-center mt-5">
+            <InfiniteMovingCards
+              items={testimonials}
+              direction="right"
+              speed="slow"
+            />
+          </div>
+        </section>
       </main>
       <Footer />
     </>
