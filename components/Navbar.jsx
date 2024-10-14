@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -10,6 +10,8 @@ import {
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
+
+import { useOutsideClick } from "@/hooks/use-outside-click"; // Import the useOutsideClick hook
 
 // Reusable component for Nav items with active state
 const NavItem = ({ href, children, isActive }) => (
@@ -40,6 +42,7 @@ const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false); // State for theme toggle
   const [navOpen, setNavOpen] = useState(false); // State for mobile navigation
   const pathname = usePathname(); // Get the current pathname
+  const navRef = useRef(null); // Reference to mobile nav
 
   // Initialize theme on component mount
   useEffect(() => {
@@ -58,9 +61,14 @@ const Navbar = () => {
     localStorage.setItem("theme", newTheme); // Save theme in localStorage
   };
 
+  // Close the mobile navigation when clicking outside
+  useOutsideClick(navRef, () => {
+    if (navOpen) setNavOpen(false);
+  });
+
   // Handle mobile navigation toggle
   const handleNav = () => {
-    setNavOpen(!navOpen);
+    setNavOpen(!navOpen); // Toggle the navOpen state
   };
 
   // Navigation links
@@ -94,7 +102,6 @@ const Navbar = () => {
           MO
         </h1>
         <div className="flex flex-col items-center text-center cursor-pointer">
-          {/* <p className="text-sm">Web Developer</p> */}
           <h1 className="border-2 rounded-full w-12 h-12 text-xs flex justify-center items-center">
             Hire Me
           </h1>
@@ -103,6 +110,7 @@ const Navbar = () => {
 
       {/* Dropdown Mobile Menu with transition */}
       <nav
+        ref={navRef}
         className={`md:hidden flex flex-col items-center justify-center bg-gray-800 bg-opacity-80 dark:bg-black/30 text-white dark:text-gray-300 py-5 space-y-8 text-xl list-none absolute top-[25%] left-[12%] z-50 w-[80%] h-[50dvh] backdrop-blur-lg transition-transform duration-300 ease-in-out ${
           navOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
