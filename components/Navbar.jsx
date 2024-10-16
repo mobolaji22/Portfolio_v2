@@ -90,7 +90,7 @@ const Navbar = () => {
   return (
     <header className="max-w-[1200px] w-full mx-auto mb-7">
       {/* Mobile Nav */}
-      <nav className="md:hidden flex justify-between items-center px-6 py-1">
+      <nav className="lg:hidden flex justify-between items-center px-6 py-1">
         <button
           aria-label="Open mobile menu"
           className="text-2xl cursor-pointer"
@@ -111,7 +111,7 @@ const Navbar = () => {
       {/* Dropdown Mobile Menu with transition */}
       <nav
         ref={navRef}
-        className={`md:hidden flex flex-col items-center justify-center bg-gray-800 bg-opacity-80 dark:bg-black/30 text-white dark:text-gray-300 py-5 space-y-8 text-xl list-none absolute top-[25%] left-[12%] z-50 w-[80%] h-[50dvh] backdrop-blur-lg transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden flex flex-col items-center justify-center bg-gray-800 bg-opacity-80 dark:bg-black/30 text-white dark:text-gray-300 py-5 space-y-8 text-xl list-none absolute top-[25%] left-[12%] z-50 w-[80%] h-[50dvh] backdrop-blur-lg transition-transform duration-300 ease-in-out ${
           navOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         }`}
       >
@@ -137,7 +137,7 @@ const Navbar = () => {
       </nav>
 
       {/* Desktop Nav */}
-      <nav className="hidden md:flex justify-between items-center py-3 px-10">
+      <nav className="hidden lg:flex justify-between items-center py-3 px-10">
         <ul className="text-lg flex items-center gap-5">
           {navLinks.map(({ href, label }) => (
             <NavItem key={label} href={href} isActive={pathname === href}>

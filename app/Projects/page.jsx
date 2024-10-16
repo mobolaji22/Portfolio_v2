@@ -38,14 +38,14 @@ const Projects = () => {
       <main className="max-w-[1200px] mx-auto sm:px-16 px-8 my-3">
         <section className="projects">
           {/* Card Section */}
-          <div className="flex flex-wrap items-center justify-center p-4 gap-x-28 gap-y-20 my-5">
+          <div className="flex flex-wrap items-center justify-center p-4 gap-y-10 md:gap-x-10 lg:gap-x-20 lg:gap-y-20 my-5">
             {currentProjects.map(({ id, title, des, img, iconLists, link }) => (
               <div
                 key={id}
-                className="sm:h-[30rem] h-[32rem] flex items-center justify-center sm:w-[500px] md:w-[350px] w-[80vw] max-w-[90vw]"
+                className="flex items-center justify-center sm:h-[30rem] h-[32rem] sm:w-[500px] md:w-[380px] w-[80vw] max-w-[500px]"
               >
                 <PinContainer title={link} href={link}>
-                  <div className="relative flex items-center justify-center w-[400px] h-[20rem] sm:h-[20rem] mb-3">
+                  <div className="relative flex items-center justify-center w-[80vw] sm:w-[500px] md:w-[380px]  max-w-[400px] h-[20rem] sm:h-[20rem] mb-3">
                     <div className="relative w-full h-full overflow-hidden rounded-ss-xl rounded-se-xl bg-[#13162d]">
                       <Image
                         src="/bg.png"

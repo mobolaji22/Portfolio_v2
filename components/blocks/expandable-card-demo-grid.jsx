@@ -230,28 +230,37 @@ const cards = [
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
+    description: "Mobolajiola",
+    title: "Mastering HTML & CSS for Responsive Design: A Beginner's Guide",
     src: "/images/articles/pagination component in reactjs.jpg",
-    ctaText: "Play",
+    ctaText: "View",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br />
-          His songs often reflect the struggles and triumphs of everyday life,
-          capturing the essence of Punjabi culture and traditions. With a career
-          spanning over two decades, Babu Maan has released numerous hit albums
-          and singles that have garnered him a massive fan following both in
-          India and abroad.
-        </p>
+        <>
+          <p>
+            Building a website today means ensuring it looks good and works well
+            on any device, whether it&apos;s a large desktop screen or a small
+            mobile phone. For a beginner, this can seem like a daunting task,
+            but mastering HTML and CSS for responsive design is the foundation
+            of front-end development. In this guide, I&apos;ll walk you through
+            the essentials to help you create a website that adjusts beautifully
+            to different screen sizes.
+          </p>
+          <h3>What is Responsive Design? </h3>
+          <p>
+            Responsive design is a web design approach where your web pages
+            automatically adjust their layout based on the size and orientation
+            of the user&apos;s screen. In other words, whether your visitor is
+            using a smartphone, tablet, or desktop, the page should look good
+            and be easy to use. Achieving this is primarily done through HTML
+            for structure and CSS for styling, using techniques like flexible
+            grids, media queries, and fluid images.
+          </p>
+        </>
       );
     },
   },
-
   {
     description: "Metallica",
     title: "For Whom The Bell Tolls",
