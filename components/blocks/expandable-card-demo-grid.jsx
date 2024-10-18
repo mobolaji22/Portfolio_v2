@@ -126,7 +126,7 @@ export default function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+      <ul className="max-w-[1000px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -234,7 +234,8 @@ const cards = [
     title: "Mastering HTML & CSS for Responsive Design: A Beginner's Guide",
     src: "/images/articles/pagination component in reactjs.jpg",
     ctaText: "View",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink:
+      "https://medium.com/@mobolajiola22/mastering-html-css-for-responsive-design-a-beginners-guide-c6c2f124bf4d",
     content: () => {
       return (
         <>

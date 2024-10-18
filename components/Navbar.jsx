@@ -11,7 +11,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
-import { useOutsideClick } from "@/hooks/use-outside-click"; // Import the useOutsideClick hook
+import { useOutsideClick } from "@/hooks/use-outside-click";
 
 // Reusable component for Nav items with active state
 const NavItem = ({ href, children, isActive }) => (
@@ -39,8 +39,8 @@ const SocialIcon = ({ Icon, label, href }) => (
 );
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false); // State for theme toggle
-  const [navOpen, setNavOpen] = useState(false); // State for mobile navigation
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
   const pathname = usePathname(); // Get the current pathname
   const navRef = useRef(null); // Reference to mobile nav
 
@@ -120,7 +120,7 @@ const Navbar = () => {
             {label}
           </NavItem>
         ))}
-        <ul className="flex items-center gap-7">
+        <div className="flex items-center gap-7">
           {socialLinks.map(({ Icon, label, href }) => (
             <SocialIcon key={label} href={href} Icon={Icon} label={label} />
           ))}
@@ -133,26 +133,26 @@ const Navbar = () => {
           >
             {isDarkMode ? "Light" : "Dark"}
           </button>
-        </ul>
+        </div>
       </nav>
 
       {/* Desktop Nav */}
       <nav className="hidden lg:flex justify-between items-center py-3 px-10">
-        <ul className="text-lg flex items-center gap-5">
+        <div className="text-lg flex items-center gap-5 list-none">
           {navLinks.map(({ href, label }) => (
             <NavItem key={label} href={href} isActive={pathname === href}>
               {label}
             </NavItem>
           ))}
-        </ul>
+        </div>
         <h2 className="border-2 bg-black text-white font-bold p-3 rounded-full text-2xl w-16 h-16 flex justify-center items-center">
           MO
         </h2>
-        <ul className="flex items-center gap-7">
+        <div className="flex items-center gap-7">
           {socialLinks.map(({ Icon, label, href }) => (
             <SocialIcon key={label} href={href} Icon={Icon} label={label} />
           ))}
-          <li>
+          <div>
             <button
               onClick={toggleTheme}
               aria-label="Toggle Theme"
@@ -162,8 +162,8 @@ const Navbar = () => {
             >
               {isDarkMode ? "Light" : "Dark"}
             </button>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </header>
   );

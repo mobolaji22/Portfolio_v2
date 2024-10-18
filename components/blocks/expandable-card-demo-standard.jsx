@@ -123,7 +123,7 @@ export default function ExpandableCardStandard() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-[1000px] mx-auto w-full gap-4">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -205,7 +205,7 @@ export const CloseIcon = () => {
 const cards = [
   {
     description: "Mobolajiola",
-    title: "React vs. Vue.js: A Comparative Analysis of Frontend Technologies",
+    title: "React vs. Vue.js",
     src: "/images/articles/pagination component in reactjs.jpg",
     ctaText: "View",
     ctaLink:
@@ -234,10 +234,11 @@ const cards = [
   },
   {
     description: "Mobolajiola",
-    title: "Mastering HTML & CSS for Responsive Design: A Beginner's Guide",
+    title: "Mastering Responsive Design",
     src: "/images/articles/pagination component in reactjs.jpg",
     ctaText: "View",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink:
+      "https://medium.com/@mobolajiola22/mastering-html-css-for-responsive-design-a-beginners-guide-c6c2f124bf4d",
     content: () => {
       return (
         <>
