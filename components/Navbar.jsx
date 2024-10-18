@@ -16,13 +16,13 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 // Reusable component for Nav items with active state
 const NavItem = ({ href, children, isActive }) => (
   <Link href={href}>
-    <li
+    <div
       className={`cursor-pointer hover:underline ${
         isActive ? "underline font-bold" : ""
       }`}
     >
       {children}
-    </li>
+    </div>
   </Link>
 );
 
