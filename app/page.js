@@ -30,7 +30,7 @@ export default function Home() {
           </h1>
 
           <p className="my-6 text-gray-500 md:text-lg">
-            As a skilled full-stack developer, I am dedicated to turning ideas
+            As a skilled frontend developer, I am dedicated to turning ideas
             into innovative web applications. Explore my latest projects and
             articles, showcasing my expertise in React.js and web development.
           </p>

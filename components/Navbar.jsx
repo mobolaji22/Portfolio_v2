@@ -81,10 +81,22 @@ const Navbar = () => {
 
   // Social links
   const socialLinks = [
-    { Icon: FaFacebook, label: "Facebook", href: "https://www.facebook.com" },
-    { Icon: FaTwitter, label: "Twitter", href: "https://twitter.com" },
-    { Icon: FaLinkedin, label: "LinkedIn", href: "https://linkedin.com" },
-    { Icon: FaGithub, label: "GitHub", href: "https://github.com" },
+    {
+      Icon: FaFacebook,
+      label: "Facebook",
+      href: "https://www.facebook.com/share/18FJge8PUr/",
+    },
+    {
+      Icon: FaTwitter,
+      label: "Twitter",
+      href: "https://x.com/Ola_mobolaji_?t=khsfSVYX15IZlhzut9FpNw&s=08",
+    },
+    {
+      Icon: FaLinkedin,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/mobolaji-ola-313295317/",
+    },
+    { Icon: FaGithub, label: "GitHub", href: "https://github.com/mobolaji22" },
   ];
 
   return (
