@@ -93,24 +93,26 @@ const Projects = () => {
           </div>
 
           {/* Pagination Controls */}
-          <div className="flex justify-center items-center space-x-4 mt-10">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index + 1}
-                onClick={() => handlePageChange(index + 1)}
-                className={`p-2 px-4 rounded-md ${
-                  currentPage === index + 1
-                    ? "bg-purple-500 text-white"
-                    : "bg-gray-200 text-black"
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center space-x-4 mt-10">
+              {Array.from({ length: totalPages }, (_, index) => (
+                <button
+                  key={index + 1}
+                  onClick={() => handlePageChange(index + 1)}
+                  className={`p-2 px-4 rounded-md ${
+                    currentPage === index + 1
+                      ? "bg-purple-500 text-white"
+                      : "bg-gray-200 text-black"
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+          )}
         </section>
 
-        {/* Client Section */}
+          {/* Client Section */}
         <section className="clients mt-10">
           <h3 className="text-2xl font-bold text-center mb-3">
             Kind words from satisfied clients
