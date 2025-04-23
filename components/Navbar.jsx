@@ -19,8 +19,7 @@ const NavItem = ({ href, children, isActive }) => (
     <div
       className={`cursor-pointer hover:underline ${
         isActive ? "underline font-bold" : ""
-      }`}
-    >
+      }`}>
       {children}
     </div>
   </Link>
@@ -32,8 +31,7 @@ const SocialIcon = ({ Icon, label, href }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-2xl hover-lift cursor-pointer"
-  >
+    className="text-2xl hover-lift cursor-pointer">
     <Icon aria-label={label} />
   </a>
 );
@@ -106,18 +104,19 @@ const Navbar = () => {
         <button
           aria-label="Open mobile menu"
           className="text-2xl cursor-pointer"
-          onClick={handleNav}
-        >
+          onClick={handleNav}>
           <FaBars />
         </button>
         <h1 className="border-2 bg-black text-white font-bold p-3 rounded-full">
           MO
         </h1>
-        <div className="flex flex-col items-center text-center cursor-pointer">
-          <h1 className="border-2 rounded-full w-12 h-12 text-xs flex justify-center items-center">
-            Hire Me
-          </h1>
-        </div>
+        <a href="mailto:mobolajiola22@gmail.com">
+          <div className="flex flex-col items-center text-center cursor-pointer">
+            <h1 className="border-2 rounded-full w-12 h-12 text-xs flex justify-center items-center">
+              Hire Me
+            </h1>
+          </div>
+        </a>
       </nav>
 
       {/* Dropdown Mobile Menu with transition */}
@@ -125,8 +124,7 @@ const Navbar = () => {
         ref={navRef}
         className={`lg:hidden flex flex-col items-center justify-center bg-gray-800 bg-opacity-80 dark:bg-black/30 text-white dark:text-gray-300 py-5 space-y-8 text-xl list-none absolute top-[25%] left-[12%] z-50 w-[80%] h-[50dvh] backdrop-blur-lg transition-transform duration-300 ease-in-out ${
           navOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-        }`}
-      >
+        }`}>
         {navLinks.map(({ href, label }) => (
           <NavItem key={label} href={href} isActive={pathname === href}>
             {label}
@@ -141,8 +139,7 @@ const Navbar = () => {
             aria-label="Toggle Theme"
             className={`transition duration-300 ease-in-out p-2 rounded-full ${
               isDarkMode ? "bg-gray-800 text-white" : "bg-white text-black"
-            }`}
-          >
+            }`}>
             {isDarkMode ? "Light" : "Dark"}
           </button>
         </div>
@@ -170,8 +167,7 @@ const Navbar = () => {
               aria-label="Toggle Theme"
               className={`transition duration-300 ease-in-out p-2 rounded-full ${
                 isDarkMode ? "bg-white text-black" : "bg-gray-800 text-white"
-              }`}
-            >
+              }`}>
               {isDarkMode ? "Light" : "Dark"}
             </button>
           </div>

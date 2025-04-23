@@ -37,11 +37,10 @@ export default function Home() {
 
           <div className="space-x-4">
             <a
-              href="/resume.pdf"
+              href="/Mobolaji-Ojeabue-Ola-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary text-secondary font-semibold rounded-md py-2 px-3 inline-flex items-center hover:text-gray-300 transition"
-            >
+              className="bg-primary text-secondary font-semibold rounded-md py-2 px-3 inline-flex items-center hover:text-gray-300 transition">
               Resume
               <span className="ml-1">
                 <FaArrowUpRightFromSquare className="text-xs" />
@@ -50,8 +49,7 @@ export default function Home() {
 
             <a
               href="mailto:mobolajiola22@gmail.com"
-              className="underline hover:text-gray-400 transition"
-            >
+              className="underline hover:text-gray-400 transition">
               Contact
             </a>
           </div>

@@ -42,25 +42,24 @@ const Projects = () => {
             {currentProjects.map(({ id, title, des, img, iconLists, link }) => (
               <div
                 key={id}
-                className="flex items-center justify-center sm:h-[30rem] h-[32rem] sm:w-[500px] md:w-[380px] w-[80vw] max-w-[500px]"
-              >
+                className="flex items-center justify-center sm:h-[30rem] h-[32rem] sm:w-[500px] md:w-[380px] w-[80vw] max-w-[500px]">
                 <PinContainer title={link} href={link}>
                   <div className="relative flex items-center justify-center w-[80vw] sm:w-[500px] md:w-[380px]  max-w-[400px] h-[20rem] sm:h-[20rem] mb-3">
                     <div className="relative w-full h-full overflow-hidden rounded-ss-xl rounded-se-xl bg-[#13162d]">
                       <Image
-                        src="/bg.png"
-                        alt="bg-img"
+                        src={img}
+                        alt={title}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                       />
                     </div>
-                    <Image
+                    {/* <Image
                       src={img}
                       alt={title}
                       className="z-10 absolute bottom-0"
                       width={400}
                       height={300}
-                    />
+                    /> */}
                   </div>
                   <h1 className="font-bold lg:text-2xl md:text-xl text-lg line-clamp-1">
                     {title}
@@ -76,8 +75,7 @@ const Projects = () => {
                           className="border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex items-center justify-center"
                           style={{
                             transform: `translateX(-${5 * index * 2}px)`,
-                          }}
-                        >
+                          }}>
                           <Image src={icon} alt={icon} width={24} height={24} />
                         </div>
                       ))}
@@ -103,8 +101,7 @@ const Projects = () => {
                     currentPage === index + 1
                       ? "bg-purple-500 text-white"
                       : "bg-gray-200 text-black"
-                  }`}
-                >
+                  }`}>
                   {index + 1}
                 </button>
               ))}
@@ -112,7 +109,7 @@ const Projects = () => {
           )}
         </section>
 
-          {/* Client Section */}
+        {/* Client Section */}
         <section className="clients mt-10">
           <h3 className="text-2xl font-bold text-center mb-3">
             Kind words from satisfied clients
