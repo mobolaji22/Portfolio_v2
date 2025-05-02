@@ -73,7 +73,7 @@ export const projects = [
   {
     id: 1,
     title: "SpaceVoyager",
-    des: ".",
+    des: "Embark on an interstellar journey with interactive planet orbits, engage in a fun space-themed mini-game, and discover fascinating fun facts about our universe.",
     img: "/images/projects/space_torism-project.png",
     iconLists: ["/re.svg", "/tail.svg", "/three.svg"],
     link: "https://space-voyager.vercel.app/",
