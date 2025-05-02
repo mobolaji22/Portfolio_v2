@@ -72,6 +72,14 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
+    title: "SpaceVoyager",
+    des: ".",
+    img: "/images/projects/space_torism-project.png",
+    iconLists: ["/re.svg", "/tail.svg", "/three.svg"],
+    link: "https://space-voyager.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Portfolio",
     des: "A modern and elegant portfolio website that effectively showcases professional work through an immersive and interactive experience.",
     img: "/images/projects/portfolio_V1-project.png",
@@ -79,7 +87,7 @@ export const projects = [
     link: "https://portfolio-v1-omega-ten.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Cinestream",
     des: "An innovative streaming platform that brings entertainment to life with a sleek and user-friendly interface.",
     img: "/images/projects/cinestream-project.png",
@@ -87,7 +95,15 @@ export const projects = [
     link: "https://cinestream-psi.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
+    title: "FireBeats",
+    des: "A dynamic music streaming platform that brings users joy through personalized recommendations.",
+    img: "/images/projects/firebeats-project.png",
+    iconLists: ["/re.svg", "/tail.svg"],
+    link: "https://firebeats.vercel.app/",
+  },
+  {
+    id: 6,
     title: "Wellnesshub",
     des: "A holistic wellness platform designed to inspire and support users on their journey to better health and well-being.",
     img: "/images/projects/wellnesHub-project.png",
@@ -95,7 +111,7 @@ export const projects = [
     link: "https://wellness-hub-green.vercel.app/",
   },
   {
-    id: 4,
+    id: 7,
     title: "Homestyle",
     des: "A sophisticated interior design platform that helps transform living spaces into personalized sanctuaries.",
     img: "/images/projects/homestyle-project.png",
@@ -103,7 +119,7 @@ export const projects = [
     link: "https://homestyle-nu.vercel.app/",
   },
   {
-    id: 5,
+    id: 8,
     title: "product-detail-page",
     des: "An engaging e-commerce product showcase that enhances the online shopping experience through intuitive design.",
     img: "/images/projects/ecom_product_page-project.png",
@@ -111,7 +127,7 @@ export const projects = [
     link: "https://ecom-product-page-ten.vercel.app/",
   },
   {
-    id: 6,
+    id: 9,
     title: "Taskify",
     des: "A streamlined task management solution that helps users stay organized and boost productivity.",
     img: "/images/projects/taskify-project.png",
@@ -119,7 +135,7 @@ export const projects = [
     link: "https://taskify-jade-tau.vercel.app/",
   },
   {
-    id: 7,
+    id: 10,
     title: "Retro-rush",
     des: "A captivating gaming experience that combines classic charm with contemporary design elements.",
     img: "/images/projects/retro_rush-project1.png",
@@ -127,7 +143,7 @@ export const projects = [
     link: "https://retro-rush.vercel.app/",
   },
   {
-    id: 8,
+    id: 11,
     title: "Blogify",
     des: "A sophisticated blogging platform that empowers content creators to share their stories in style.",
     img: "/images/projects/blogify-project.png",
@@ -135,7 +151,7 @@ export const projects = [
     link: "https://blogify-three-green.vercel.app/",
   },
   {
-    id: 9,
+    id: 12,
     title: "10 projects",
     des: "A comprehensive showcase demonstrating versatility in web development through a collection of diverse projects.",
     img: "/images/projects/10_projects-project.png",
@@ -143,7 +159,7 @@ export const projects = [
     link: "https://10-projects-one.vercel.app/",
   },
   {
-    id: 10,
+    id: 13,
     title: "Quickfit - a fitness webapp",
     des: "An innovative fitness application that revolutionizes the way people approach their health and workout routines.",
     img: "/images/projects/portfolio_quickfit.png",
@@ -151,7 +167,7 @@ export const projects = [
     link: "https://quickfit2-0.vercel.app/",
   },
   {
-    id: 11,
+    id: 14,
     title: "Ecommerce site",
     des: "A dynamic e-commerce solution that delivers a seamless and engaging online shopping experience.",
     img: "/images/projects/portfolio_ecommerce.png",
@@ -165,7 +181,7 @@ export const projects = [
     link: "https://my-hng-stage2.vercel.app/",
   },
   {
-    id: 12,
+    id: 15,
     title: "movie-database",
     des: "An elegant movie exploration platform that connects users with their favorite films through an intuitive interface.",
     img: "/images/projects/portfolio_movie-database.png",
@@ -173,7 +189,7 @@ export const projects = [
     link: "https://movie-database-seven-pi.vercel.app/",
   },
   {
-    id: 13,
+    id: 16,
     title: "Quiz-app",
     des: "An engaging educational platform that makes learning interactive and enjoyable through carefully crafted quizzes.",
     img: "/images/projects/portfolio_quizapp.png",
