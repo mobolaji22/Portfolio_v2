@@ -72,6 +72,14 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
+    title: "Prestige Estate",
+    des: "A modern and elegant real estate website that showcases stunning properties and offers a seamless user experience.",
+    img: "/images/projects/prestige_estate-project.png",
+    iconLists: ["/re.svg", "/tail.svg", "/three.svg"],
+    link: "https://prestige-estate.vercel.app/",
+  },
+  {
+    id: 2,
     title: "SpaceVoyager",
     des: "Embark on an interstellar journey with interactive planet orbits, engage in a fun space-themed mini-game, and discover fascinating fun facts about our universe.",
     img: "/images/projects/space_torism-project.png",
@@ -79,7 +87,7 @@ export const projects = [
     link: "https://space-voyager.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Portfolio",
     des: "A modern and elegant portfolio website that effectively showcases professional work through an immersive and interactive experience.",
     img: "/images/projects/portfolio_V1-project.png",
@@ -87,7 +95,7 @@ export const projects = [
     link: "https://portfolio-v1-omega-ten.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Cinestream",
     des: "An innovative streaming platform that brings entertainment to life with a sleek and user-friendly interface.",
     img: "/images/projects/cinestream-project.png",
@@ -95,7 +103,7 @@ export const projects = [
     link: "https://cinestream-psi.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "FireBeats",
     des: "A dynamic music streaming platform that brings users joy through personalized recommendations.",
     img: "/images/projects/firebeats-project.png",
