@@ -4,8 +4,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { PinContainer } from "@/components/ui/3d-pin";
-import { projects, companies, testimonials } from "@/data";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { projects } from "@/data";
 import { FaLocationArrow } from "react-icons/fa6";
 
 const Projects = () => {
@@ -109,20 +108,6 @@ const Projects = () => {
           )}
         </section>
 
-        {/* Client Section */}
-        <section className="clients mt-10">
-          <h3 className="text-2xl font-bold text-center mb-3">
-            Kind words from satisfied clients
-          </h3>
-
-          <div className="flex flex-col items-center mt-5">
-            <InfiniteMovingCards
-              items={testimonials}
-              direction="right"
-              speed="slow"
-            />
-          </div>
-        </section>
       </main>
       <Footer />
     </>

@@ -1,7 +1,6 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -203,39 +202,6 @@ export const projects = [
     img: "/images/projects/portfolio_quizapp.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://quiz-app-blue-chi.vercel.app/",
-  },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Mobolaji's expertise in web development is unparalleled. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to excellence are truly commendable.",
-    name: "Sarah Williams",
-    title: "CEO of Tech Innovators",
-  },
-  {
-    quote:
-      "Working with Mobolaji was a game-changer for our project. His innovative solutions and technical skills helped us overcome numerous challenges. I highly recommend him for any development needs.",
-    name: "David Brown",
-    title: "Project Manager at Creative Solutions",
-  },
-  {
-    quote:
-      "Mobolaji's ability to understand our requirements and deliver beyond our expectations was impressive. His work ethic and dedication to the project were evident from start to finish.",
-    name: "Emily Clark",
-    title: "Founder of Startup Hub",
-  },
-  {
-    quote:
-      "Mobolaji is a top-notch developer who brings creativity and technical prowess to every project. His collaborative approach and problem-solving skills make him an invaluable asset to any team.",
-    name: "James Anderson",
-    title: "CTO of Digital Ventures",
-  },
-  {
-    quote:
-      "Mobolaji's professionalism and expertise were evident throughout our collaboration. He consistently delivered high-quality work on time and exceeded our expectations. I look forward to working with him again.",
-    name: "Olivia Martinez",
-    title: "Marketing Director at Brand Builders",
   },
 ];
 
