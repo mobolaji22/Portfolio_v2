@@ -14,6 +14,8 @@ if (!src) {
 const input = JSON.parse(fs.readFileSync(src, "utf8"));
 
 const DROP_KEY = /(^_meta$|Note$|^note$|[Rr]ule$|^rules$|^reason$|^source$|^visualBrief$|^excerpt$|^forbidden$|^dryLineFlag$|^SAMPLE$|^avoid$|^how$|^absentSlots$|^namedVariant|^src$)/;
+// Four keys end in "Note" but are rendered copy, not notes to the builder (friction T1.6-F2).
+const KEEP_KEY = new Set(["contrastNote", "itWasntNote", "generatedNote", "tagsNote"]);
 const BLOCKED_CLAIMS = new Set(["CL-49"]);
 
 function strip(node, trail) {
@@ -23,7 +25,7 @@ function strip(node, trail) {
     for (const [k, v] of Object.entries(node)) {
       // the fixture's data object is called "source" and must stay
       const keepSource = k === "source" && trail.join(".") === "demo.fixture";
-      if (DROP_KEY.test(k) && !keepSource) continue;
+      if (DROP_KEY.test(k) && !keepSource && !KEEP_KEY.has(k)) continue;
       out[k] = strip(v, [...trail, k]);
     }
     return out;

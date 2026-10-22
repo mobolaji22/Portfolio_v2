@@ -9,4 +9,4 @@ export const TickIcon = ({ className }) => (<svg {...base} className={className}
 export const RingDot = ({ className }) => (<svg {...base} className={className}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="2.5" fill="currentColor" /></svg>);
 export const QuoteIcon = ({ className }) => (<svg {...base} className={className} stroke="none"><path fill="currentColor" d="M5 8h5v5l-2 5H6l1.6-4H5ZM13 8h5v5l-2 5h-2l1.6-4H13Z" /></svg>);
 // decorative glyph for the Generated look's icon tiles (invented, neutral)
-export const GenGlyph = ({ className }) => (<svg {...base} className={className} strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="9" r="4" /><path d="M7 20v-5M13 20v-9M19 20v-3" /></svg>);
+export const GenGlyph = ({ className }) => (<svg {...base} className={className} strokeLinecap="round" strokeLinejoin="round"><path d="M5 19V11M12 19V5M19 19v-5" strokeWidth="2.4" /></svg>);

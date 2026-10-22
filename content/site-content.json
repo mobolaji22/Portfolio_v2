@@ -330,6 +330,13 @@
     "text": "Every control shows where you are."
    }
   ],
+  "contrastNote": {
+   "measured": "Contrast: measured at build. Report linked.",
+   "notMeasured": "Contrast: not measured.",
+   "claims": [
+    "CL-05"
+   ]
+  },
   "credit": {
    "owner": "Recreated from defects I found on a real project. Sample data.",
    "directed": "Recreated defect types. Sample data.",
@@ -386,6 +393,7 @@
     "accessibleName": "Tag: My word. Nothing public backs this. Weigh it as you would a reference."
    }
   },
+  "generatedNote": "The tags come from one list of claims, so a section can't say more than the list allows.",
   "filter": {
    "label": "Show claims by tag",
    "all": "All",
@@ -553,6 +561,12 @@
      ]
     }
    ],
+   "itWasntNote": {
+    "text": "Each has a recorded instance in the working notes for this application. The notes are private, so weigh this one as My word.",
+    "claims": [
+     "CL-30"
+    ]
+   },
    "whatIDid": {
     "owner": [
      {
@@ -705,6 +719,12 @@
      ]
     }
    ],
+   "itWasntNote": {
+    "text": "Each has a recorded instance in the working notes for this application. The notes are private, so weigh this one as My word.",
+    "claims": [
+     "CL-35"
+    ]
+   },
    "whatIDid": {
     "owner": [
      {
@@ -839,6 +859,12 @@
      ]
     }
    ],
+   "itWasntNote": {
+    "text": "This is the failure the design rules out. It isn't a defect I found in a running system.",
+    "claims": [
+     "CL-60"
+    ]
+   },
    "whatIDid": {
     "owner": [
      {
@@ -978,6 +1004,7 @@
      ]
     }
    ],
+   "itWasntNote": null,
    "whatIDid": {
     "owner": [
      {
@@ -1090,6 +1117,12 @@
      ]
     }
    ],
+   "itWasntNote": {
+    "text": "These are the two things the code guards against. They aren't defects I found in a running system.",
+    "claims": [
+     "CL-50"
+    ]
+   },
    "whatIDid": {
     "owner": [
      {
@@ -1342,6 +1375,7 @@
   }
  },
  "footer": {
+  "tagsNote": "Claims on this page carry a tag: Check it yourself, Shown or My word.",
   "tagsNoteLink": "#check-it-yourself",
   "accessibility": "If something here doesn't work with your device or assistive technology, write to me.",
   "copyright": "© {year} Mobolaji",
