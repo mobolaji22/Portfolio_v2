@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tokens": "node scripts/gen-tokens.mjs",
+    "content:sync": "node scripts/sync-content.mjs",
+    "assets": "node scripts/make-assets.mjs",
+    "check:accent": "node scripts/check-accent.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.11.1",
