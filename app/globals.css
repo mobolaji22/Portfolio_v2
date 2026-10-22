@@ -46,10 +46,11 @@
   @media (min-width: 1024px) { .page { padding-inline: 40px; } }
   .grid-12 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; }
   @media (min-width: 768px) { .grid-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; } }
-  .section { padding-block: 64px; border-top: 1px solid var(--c-border-subtle); }
-  @media (min-width: 768px) { .section { padding-block: 96px; } }
-  @media (min-width: 1280px) { .section { padding-block: 128px; } }
-  .section-band { background: var(--c-surface-sunken); }
+  .section { padding-block: 56px; border-top: 1px solid var(--c-border-subtle); }
+  @media (min-width: 768px) { .section { padding-block: 72px; } }
+  @media (min-width: 1280px) { .section { padding-block: 88px; } }
+  .section-band { background: var(--c-surface-sunken); padding-block: 48px; }
+  @media (min-width: 1024px) { .section-band { padding-block: 64px; } }
   .prose-measure { max-width: 62ch; text-wrap: pretty; }
   .lead-measure { max-width: 52ch; text-wrap: pretty; }
   .mono-break { overflow-wrap: anywhere; }
