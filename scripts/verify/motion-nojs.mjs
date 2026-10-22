@@ -1,4 +1,4 @@
-// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core for axe.mjs) installed outside this repo; Chromium path as in the file. See T1.6-engineering/04-verification.md.
+// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core where used) installed outside this repo. See T1.6-engineering/04-verification.md.
 import { chromium } from "playwright-core";
 const B = "http://localhost:3100";
 const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium", args: ["--no-sandbox"] });
@@ -56,7 +56,7 @@ async function sampleAnims(p, ms) {
   const r = await p.evaluate(() => {
     const plate = document.querySelector("[data-testid=plate]");
     const vis = (e) => e && getComputedStyle(e).visibility !== "hidden" && e.getBoundingClientRect().height > 0;
-    return { look: plate.dataset.look, state: plate.dataset.state, plateVisible: vis(plate), members: document.querySelector("[data-testid=kpi-members] .run-des .val-new").textContent,
+    return { look: plate.dataset.look, state: plate.dataset.state, plateVisible: vis(plate), members: document.querySelector("[data-testid=kpi-members] .run-des .count-now").textContent,
       nojs: document.querySelector("[data-testid=nojs]").innerText.slice(0, 400), toolbarVisible: vis(document.querySelector(".demo-toolbar")), skip: !!document.querySelector(".skip"),
       navLinks: [...document.querySelectorAll("header a")].map((a) => a.textContent.trim()), themeVisible: [...document.querySelectorAll("header button")].some(vis) };
   });

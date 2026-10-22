@@ -89,8 +89,12 @@ export function StudentFigure({ t }) {
       }
       right={
         <div className="sig-list">
-          <Segmented label={t.looked} value={right ? tab : "all"} onChange={setTab} hidden={false}
-            options={(right ? tabs : tabs.slice(0, 1)).map((x) => ({ ...x, label: apos(x.label) }))} />
+          {ready ? (
+            <Segmented label={t.looked} value={right ? tab : "all"} onChange={setTab} hidden={false}
+              options={(right ? tabs : tabs.slice(0, 1)).map((x) => ({ ...x, label: apos(x.label) }))} />
+          ) : (
+            <div className="cf-tabs">{tabs.map((x) => <span key={x.value} className="cf-tab" aria-current={x.value === "all" ? "true" : undefined}>{apos(x.label)}</span>)}</div>
+          )}
           <ul className="sig-rows" aria-live="off">
             {rows.map((r) => (
               <li key={r.id}><span className="t-mono-sm">{r.id}</span><span className="t-ui">{apos(label(r.s))}</span></li>
@@ -191,7 +195,7 @@ export function PaymentsFigure({ t }) {
 export function CommandFigure({ t }) {
   const [caps, setCaps, ready] = useStart({ check: true, design: false }, { check: true, design: true });
   const missing = !caps.check || !caps.design;
-  const status = [`${t.check}: ${caps.check ? "" : t.rule}`, `${t.design}: ${caps.design ? "" : t.rule}`].map((x) => x.trim()).join(" ").replace(/: $/, "");
+  const status = apos([caps.check && t.check, caps.design && t.design].filter(Boolean).join(". ") + (missing ? `${caps.check || caps.design ? ". " : ""}${t.rule}` : "."));
   return (
     <Frame id="command-center" alt={t.alt} sample={t.sample} status={ready ? status : ""}
       headLeft={t.ui.flags} headRight={missing ? t.needed : t.looked}

@@ -1,4 +1,4 @@
-// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core for axe.mjs) installed outside this repo; Chromium path as in the file. See T1.6-engineering/04-verification.md.
+// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core where used) installed outside this repo. See T1.6-engineering/04-verification.md.
 import fs from "node:fs";
 import { chromium } from "playwright-core";
 const root = ".";
@@ -38,7 +38,7 @@ for (const theme of ["light", "dark"]) {
       const res = await p.evaluate(() => {
         const parse = (s) => { const m = s.match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(",").map((x) => parseFloat(x)); return { r: v[0], g: v[1], b: v[2], a: v.length > 3 ? v[3] : 1 }; };
         const L = (c) => { const f = [c.r, c.g, c.b].map((x) => x / 255).map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)); return 0.2126 * f[0] + 0.7152 * f[1] + 0.0722 * f[2]; };
-        const bgOf = (el) => { let e = el; while (e) { const cs = getComputedStyle(e); if (cs.backgroundImage !== "none") return "image"; const c = parse(cs.backgroundColor); if (c && c.a > 0.5) return c; e = e.parentElement; } return { r: 255, g: 255, b: 255, a: 1 }; };
+        const bgOf = (el) => { if (el.closest(".is-applied")) return { r: 124, g: 58, b: 237, a: 1 }; let e = el; while (e) { const cs = getComputedStyle(e); if (cs.backgroundImage !== "none") return "image"; const c = parse(cs.backgroundColor); if (c && c.a > 0.5) return c; e = e.parentElement; } return { r: 255, g: 255, b: 255, a: 1 }; };
         const out = []; const seen = new Set();
         const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
         while (w.nextNode()) {

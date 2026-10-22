@@ -1,4 +1,4 @@
-// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core for axe.mjs) installed outside this repo; Chromium path as in the file. See T1.6-engineering/04-verification.md.
+// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core where used) installed outside this repo. See T1.6-engineering/04-verification.md.
 import { chromium } from "playwright-core";
 const B = "http://localhost:3100";
 const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium", args: ["--no-sandbox"] });
@@ -15,7 +15,7 @@ const log = (...a) => console.log(...a);
   await p.click("[data-testid=primary]");
   const t0 = Date.now(); await p.waitForFunction(() => document.querySelector("[data-testid=plate]").dataset.state === "checked"); log("T-D2 checked after ms:", Date.now() - t0, "(limit 2200)");
   log("live:", await p.textContent("[data-testid=live]"));
-  log("checked values:", await p.evaluate(() => ["members", "open", "resolved", "closed"].map((k) => { const e = document.querySelector(`[data-testid=kpi-${k}]`); return k + "=" + e.querySelector(".run-gen .val-new").textContent; }).join(" ")));
+  log("checked values:", await p.evaluate(() => ["members", "open", "resolved", "closed"].map((k) => { const e = document.querySelector(`[data-testid=kpi-${k}]`); return k + "=" + (e.querySelector(".run-gen .count-now") || e.querySelector(".run-gen .val-new")).textContent; }).join(" ")));
   log("focus on primary after state change:", await p.evaluate(() => document.activeElement.dataset.testid));
   // interruption: press design then immediately scrub back
   await p.click("[data-testid=primary]"); await p.waitForTimeout(300); const mid = await st();

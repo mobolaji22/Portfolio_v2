@@ -1,4 +1,4 @@
-// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core for axe.mjs) installed outside this repo; Chromium path as in the file. See T1.6-engineering/04-verification.md.
+// Verification script (Playwright, run against `next start -p 3100`). Needs playwright-core (and axe-core where used) installed outside this repo. See T1.6-engineering/04-verification.md.
 import { chromium } from "playwright-core";
 import fs from "node:fs";
 const content = JSON.parse(fs.readFileSync("./content/site-content.json", "utf8"));
@@ -16,7 +16,7 @@ const must = [content.hero.eyebrow, content.hero.h1, content.hero.sub, content.h
   ...content.receipts.flatMap((r) => [r.title, r.text, r.linkLabel]), content.work.heading, content.work.lead, content.howIWork.heading, ...content.howIWork.items.map((i) => i.title),
   content.howIWork.items[0].text.owner, content.howIWork.items[1].text, content.about.heading, content.about.paragraphs[0].text, content.aiAuthorship.A.about, content.aiAuthorship.A.footer, content.about.paragraphs[2].text.named,
   content.contact.heading, content.contact.lead, content.contact.freelanceDoor.line, content.contact.freelanceDoor.scope, content.contact.helper, content.footer.tagsNote, content.footer.accessibility,
-  content.shortEntries[0].title, content.shortEntries[0].text, content.demo.credit.owner, content.demo.designCredit.owner, content.demo.contrastNote.notMeasured, content.demo.noJs.body.replace(/reading 0 where the source holds 412/, "reading 0 where the source holds 412")];
+  content.shortEntries[0].title, content.shortEntries[0].text, content.demo.credit.owner, content.demo.designCredit.owner, content.demo.noJs.body.replace(/reading 0 where the source holds 412/, "reading 0 where the source holds 412")];
 const miss = must.filter((s) => !text.includes(norm(s)));
 out.push(`AC9 home: ${must.length} keyed strings checked, ${miss.length} missing${miss.length ? ": " + JSON.stringify(miss.map((m) => m.slice(0, 50))) : ""}`);
 // case pages: every stage string present

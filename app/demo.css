@@ -267,8 +267,8 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
 }
 
 /* plate height: the same in every state (AC5b). Values measured on the build; the chart absorbs the slack. */
-.screen { --screen-min: 608px; }
-@container plate (min-width: 456px) { .screen { --screen-min: 614px; } }
+.screen { --screen-min: 612px; }
+@container plate (min-width: 456px) { .screen { --screen-min: 667px; } }
 @container plate (min-width: 520px) { .screen { --screen-min: 570px; } }
 @container plate (min-width: 690px) { .screen { --screen-min: 534px; } }
 
@@ -324,3 +324,7 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
 @keyframes arrive { from { opacity: 0; } to { opacity: 1; } }
 /* going back, the cards land rather than cross the plate in view */
 .plate[data-look="g"][data-from="3"][data-state="moving"] .kpi { animation: arrive calc(260ms * var(--tempo, 1)) var(--ease-out) calc(220ms * var(--tempo, 1)) backwards; }
+
+/* reserve the toolbar and hint line before hydration (no layout shift); without JavaScript they stay hidden */
+html.js .demo-toolbar[hidden] { display: grid !important; visibility: hidden; }
+html.js .demo-hint[hidden] { display: block !important; visibility: hidden; }
