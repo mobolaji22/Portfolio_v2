@@ -246,3 +246,12 @@
 @media (forced-colors: active) { .seg, .seg-opt + .seg-opt, .sw-track { border-color: CanvasText; } .seg-opt[aria-checked="true"] { background: Highlight; color: HighlightText; } .sig-btn.is-applied { outline: 2px solid CanvasText; } }
 @media (max-width: 767px) { .sig-body { min-height: 0; } .sig-rows { min-height: 0; } }
 .sig-list .seg-opt { padding: 0 12px; }
+
+/* ---- work-row thumbnails: the end state of each case figure, small ---- */
+.wt { display: flex; align-items: center; min-height: 148px; padding: 20px; background: var(--c-surface-sunken); border: 1px solid var(--c-border-subtle); border-radius: 2px; overflow: hidden; }
+.wt > * { width: 100%; }
+.wt .sig-card { width: auto; min-width: 0; }
+.wt-stack { display: grid; gap: 0; }
+.wt-line { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-top: 1px solid var(--c-border-subtle); }
+.work-row:hover .wt { background: var(--c-surface-page); }
+.wt .btn, .wt .sig-btn { pointer-events: none; }
