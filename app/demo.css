@@ -290,3 +290,9 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
 .fig-preview .t-mono-sm { white-space: nowrap; color: var(--c-text-muted); }
 .plate[data-look="d"] .kpi:not([data-key="members"]) .kpi-fig:has(.fig-preview) { width: 120px; }
 .ov-motion { right: 20px; }
+
+/* the measured contrast line shows the values of the active theme */
+.th-dark { display: none; }
+:root.dark .th-light { display: none; }
+:root.dark .th-dark { display: inline; }
+@media (prefers-color-scheme: dark) { :root:not(.light):not(.dark) .th-light { display: none; } :root:not(.light):not(.dark) .th-dark { display: inline; } }

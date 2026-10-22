@@ -324,7 +324,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
             </div>
             {note && <p className="t-body-sm note-text" data-testid="note-text">{apos(copy.notes.find((x) => x.id === note).text)}
               {note === "states" && preview > 0 && <span className="t-mono-label preview-count"> {preview}/{PREVIEWS.length - 1}</span>}</p>}
-            <p className="t-mono-label contrast-line" data-on={view.notes}>{apos(copy.contrastNote.notMeasured)}</p>
+            <p className="t-mono-label contrast-line" data-on={view.notes}><span className="th-light">{copy.contrast.light}</span><span className="th-dark">{copy.contrast.dark}</span></p>
           </div>
 
           <div className="credits">

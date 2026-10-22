@@ -39,7 +39,7 @@ export default function CaseFigure({ study }) {
       right = (
         <div>
           <span className="cf-fig t-figure-xl"><span className="cf-figtext">{d.membersHeld}<span className="fig-bar" data-on="true" /></span><TickIcon className="cf-tick" /></span>
-          <p className="t-ui mt-3 text-ink-2">{typo(lab.members)}</p>
+          <p className="t-ui mt-1 text-ink-2">{typo(lab.members)}</p>
           <p className="t-mono-sm mt-2 text-ink-3">{typo(D.defects[0].readout.replace("{membersShown}", d.membersShown).replace("{membersHeld}", d.membersHeld))}</p>
         </div>
       );

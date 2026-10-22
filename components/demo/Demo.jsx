@@ -3,6 +3,7 @@ import TagChips from "../TagChips";
 import { c, byVoice, typo, settings } from "@/lib/content";
 import { source } from "@/lib/demo-fixture";
 import { diff } from "@/lib/demo-model";
+import { measured, contrastLine } from "@/lib/contrast";
 
 // Server wrapper: reads the demo copy by key, builds every figure from the fixture (N8), passes plain data.
 export default function Demo() {
@@ -11,7 +12,7 @@ export default function Demo() {
   const copy = {
     regionLabel: d.regionLabel, dashboardTitle: d.dashboardTitle, controls: d.controls,
     states: { ...d.states, ...c.states }, labels: d.dashboardLabels, defects: d.defects,
-    notes: d.designedNotes, contrastNote: d.contrastNote, noJs: d.noJs, reducedMotion: d.reducedMotion,
+    notes: d.designedNotes, contrast: { light: contrastLine(measured.light), dark: contrastLine(measured.dark) }, noJs: d.noJs, reducedMotion: d.reducedMotion,
     a11y: c.a11y, hero: { preStep: c.hero.preStep }, preStep: settings.preStep !== false,
   };
   // noJs.body states two figures in prose: rebuild them from the fixture and fail the build if the sentence changes

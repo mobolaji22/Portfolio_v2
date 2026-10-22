@@ -192,3 +192,6 @@
 /* list links stand alone (not inline in a sentence): give them the 24 px target floor */
 .tl { display: inline-flex; align-items: center; min-height: 24px; }
 @media (pointer: coarse) { .tl { min-height: 44px; } }
+
+/* wherever the highlighter bar sits above a label, the figure owns the room for it */
+.cf-fig { padding-bottom: .34em; }
