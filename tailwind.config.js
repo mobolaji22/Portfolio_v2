@@ -9,11 +9,15 @@ module.exports = {
   darkMode: ["class"],
   content: ["./app/**/*.{js,jsx}", "./components/**/*.{js,jsx}", "./lib/**/*.{js,jsx}"],
   theme: {
-    screens: Object.fromEntries(
-      Object.entries(tokens.breakpoints)
-        .filter(([k]) => k !== "testWidths")
-        .map(([k, v]) => [k, px(v)])
-    ),
+    screens: {
+      ...Object.fromEntries(
+        Object.entries(tokens.breakpoints)
+          .filter(([k]) => k !== "testWidths")
+          .map(([k, v]) => [k, px(v)])
+      ),
+      // two-column hero (headline left, whole demo right): an Engineering decision, see 03 round 4
+      hero: "1240px",
+    },
     spacing: {
       px: "1px",
       ...Object.fromEntries(Object.entries(tokens.spacing.px).map(([k, v]) => [`s${k}`, px(v)])),
