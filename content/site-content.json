@@ -1820,6 +1820,7 @@
   "cakeCaption": "Queried: resolved. On screen: nothing.",
   "paymentsBefore": "Awaiting deposit",
   "paymentsAfter": "Deposit paid",
-  "paymentsRow": "Booking"
+  "paymentsRow": "Booking",
+  "sampleData": "Sample data"
  }
 }

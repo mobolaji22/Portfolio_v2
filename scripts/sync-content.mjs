@@ -48,6 +48,8 @@ out.visuals = {
   paymentsBefore: pay[1],
   paymentsAfter: pay[2],
   paymentsRow: "Booking",
+  // the label the coordinator asked for on every figure
+  sampleData: "Sample data",
 };
 
 // claims: keep only what the build needs to tag and link. No claim text, no internal guards.
