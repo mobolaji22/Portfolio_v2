@@ -29,7 +29,7 @@ export default function Contact() {
           )}
           <ul className="mt-2 flex flex-wrap gap-x-4">
             {c.contact.profiles.map((p) => (
-              <li key={p.id}><ExternalLink href={p.href} className="btn btn-ghost" ariaLabel={p.accessibleName}>{p.label}</ExternalLink></li>
+              <li key={p.id}><ExternalLink href={p.href} className="btn btn-ghost -ml-2" ariaLabel={p.accessibleName}>{p.label}</ExternalLink></li>
             ))}
           </ul>
         </div>

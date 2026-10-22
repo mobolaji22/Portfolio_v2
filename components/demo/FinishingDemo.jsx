@@ -297,7 +297,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
             })}
           </ul>
 
-          <div className="notes js-only" data-on={view.notes} data-testid="notes" hidden={!hydrated}>
+          <div className="notes js-only" data-on={view.notes} data-testid="notes" hidden={!hydrated || !(view.notes || rest === 3)}>
             <div className="notes-row" role="group" aria-label={apos(copy.regionLabel)}>
               {copy.notes.map((nt, i) => (
                 <button key={nt.id} type="button" className="note-btn t-ui-sm" aria-pressed={note === nt.id} tabIndex={view.notes && isDesignedRest ? 0 : -1}

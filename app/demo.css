@@ -33,7 +33,7 @@
 
 /* ---- plate and screen ---- */
 .plate { container-type: inline-size; container-name: plate; position: relative; background: var(--c-surface-sunken); border: 1px solid var(--c-border-subtle); border-radius: 2px; padding: 12px; }
-.screen { position: relative; display: grid; gap: 16px; padding: 20px; align-content: start; min-height: 570px; }
+.screen { position: relative; display: grid; gap: 16px; padding: 20px; align-content: start; min-height: var(--screen-min, 0px); }
 .screen-layer { position: absolute; inset: 0; pointer-events: none; transition: opacity var(--dur-settle) var(--ease-out); }
 .screen-g { background: var(--c-g-page); border-radius: 12px; }
 .screen-p { background: var(--c-surface-page); }
@@ -47,24 +47,26 @@
 .chart { grid-column: 1 / -1; order: 10; }
 .kpi-closed { order: 4; }
 
-.plate[data-look="g"] .screen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.plate[data-look="g"] .screen { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto auto 1fr; }
+.plate[data-look="g"][data-closed="false"] .kpi[data-key="resolved"] { grid-column: 1 / -1; }
+@container plate (min-width: 456px) { .plate[data-look="g"][data-closed="false"] .kpi[data-key="resolved"] { grid-column: auto; } }
 @container plate (min-width: 456px) {
-  .plate[data-look="g"] .screen { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; min-height: 534px; }
+  .plate[data-look="g"] .screen { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto 1fr; gap: 12px; }
   .plate[data-look="g"][data-closed="true"] .screen { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @container plate (min-width: 690px) {
-  .plate[data-look="g"] .screen { gap: 16px; min-height: 470px; }
+  .plate[data-look="g"] .screen { gap: 16px; }
 }
 
 /* designed: one column below wide; 12 columns from wide */
-.plate[data-look="d"] .screen { grid-template-columns: 1fr; align-content: space-between; gap: 20px; }
+.plate[data-look="d"] .screen { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr auto auto auto; gap: 20px; }
 .plate[data-look="d"] .kpi[data-key="members"] { order: 1; }
 .plate[data-look="d"] .chart { order: 2; }
 .plate[data-look="d"] .kpi[data-key="open"] { order: 3; }
 .plate[data-look="d"] .kpi[data-key="resolved"] { order: 4; }
 .plate[data-look="d"] .kpi-closed { order: 5; }
-@container plate (min-width: 690px) {
-  .plate[data-look="d"] .screen { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 24px; }
+@container plate (min-width: 520px) {
+  .plate[data-look="d"] .screen { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr auto auto auto; column-gap: 24px; row-gap: 24px; }
   .plate[data-look="d"] .kpi[data-key="members"] { grid-column: 1 / 5; grid-row: 2; order: 0; }
   .plate[data-look="d"] .chart { grid-column: 5 / 13; grid-row: 2; order: 0; }
   .plate[data-look="d"] .kpi[data-key="open"], .plate[data-look="d"] .kpi[data-key="resolved"], .plate[data-look="d"] .kpi-closed { grid-column: 1 / -1; order: 0; }
@@ -72,8 +74,6 @@
   .plate[data-look="d"] .kpi[data-key="resolved"] { grid-row: 4; }
   .plate[data-look="d"] .kpi-closed { grid-row: 5; }
 }
-@container plate (min-width: 456px) { .plate[data-look="d"] .screen { min-height: 534px; } }
-@container plate (min-width: 690px) { .plate[data-look="d"] .screen { min-height: 470px; } }
 
 /* ---- decoration layers (Generated only; fade with opacity) ---- */
 .chrome { position: absolute; inset: 0; background: var(--c-g-card); border-radius: 16px; box-shadow: var(--g-card-shadow); z-index: -1; transition: opacity var(--dur-quick) var(--ease-out); }
@@ -112,6 +112,7 @@
 .readout { color: var(--c-text-muted); opacity: 0; transform: translateY(6px); transition: opacity var(--dur-quick) var(--ease-out), transform var(--dur-quick) var(--ease-out); min-height: 1.4em; }
 .readout[data-on="true"] { opacity: 1; transform: none; }
 .plate[data-look="g"] .readout { font-size: 12px; }
+.plate[data-look="g"] .readout[data-on="false"] { display: none; }
 .kpi .readout { margin-top: 2px; }
 .plate[data-look="g"] .kpi[data-key="members"] .readout, .plate[data-look="g"] .kpi[data-key="resolved"] .readout { margin-top: 0; }
 .plate[data-look="g"] .kpi[data-key="open"] .readout { display: none; }
@@ -162,8 +163,8 @@
 .chart { position: relative; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .plate[data-look="d"] .chart { padding: 0; }
 .chart-label-text { font-family: var(--font-gen), Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 1.5; color: var(--c-g-text); }
-.chart-body { position: relative; height: 130px; overflow: hidden; }
-.plate[data-look="d"] .chart-body { height: 150px; }
+.chart-body { position: relative; flex: 1; min-height: 130px; overflow: hidden; }
+.plate[data-look="d"] .chart-body { min-height: 150px; }
 .grid-lines { z-index: 3; position: absolute; inset: 0 0 20px 0; display: flex; flex-direction: column; justify-content: space-between; transition: opacity var(--dur-quick) var(--ease-out); }
 .grid-lines i { display: block; border-top: 1px dashed var(--c-g-border); }
 .base-line { position: absolute; left: 0; right: 0; bottom: 20px; height: 1px; background: var(--c-border-strong); display: none; }
@@ -212,7 +213,7 @@
 @keyframes scan-run { from { transform: translateY(0); } to { transform: translateY(var(--scan-dist, 500px)); } }
 
 /* ---- caption, findings, notes, credits ---- */
-.demo-caption { margin-top: 20px; min-height: 5.5rem; }
+.demo-caption { margin-top: 20px; }
 .cap-fade { animation: cap-in var(--dur-quick) var(--ease-out) both; }
 @keyframes cap-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 .cap-sub { margin-top: 4px; color: var(--c-text-secondary); }
@@ -257,3 +258,17 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
   .chart-line { stroke: CanvasText; }
   .run-des { color: CanvasText; }
 }
+
+@container plate (max-width: 455px) { .plate[data-look="g"] .icon-tile { display: none; } .plate[data-look="g"] .kpi { padding: 12px; gap: 8px; } }
+
+@container plate (max-width: 455px) {
+  .plate[data-look="g"] .readout { display: none; }
+  .plate[data-look="d"] .screen { gap: 14px; }
+  .plate[data-look="d"] .kpi:not([data-key="members"]) { padding: 6px 0; min-height: 40px; }
+}
+
+/* plate height: the same in every state (AC5b). Values measured on the build; the chart absorbs the slack. */
+.screen { --screen-min: 608px; }
+@container plate (min-width: 456px) { .screen { --screen-min: 614px; } }
+@container plate (min-width: 520px) { .screen { --screen-min: 570px; } }
+@container plate (min-width: 690px) { .screen { --screen-min: 534px; } }
