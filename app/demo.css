@@ -107,7 +107,7 @@
 .fig-tick { width: 14px; height: 14px; margin-top: .22em; opacity: 0; transition: opacity var(--dur-quick) var(--ease-out); color: var(--c-text-primary); flex: none; }
 .run-gen .fig-tick { color: var(--c-g-text); }
 .fig[data-confirmed="true"] .fig-tick { opacity: 1; }
-.fig-bar { transition-duration: calc(320ms * var(--tempo, 1)); }
+.fig-bar { transition-duration: calc(460ms * var(--tempo, 1)); }
 .run-gen .fig-tick { width: 14px; height: 14px; margin-top: .45em; }
 
 .readout { color: var(--c-text-muted); opacity: 0; transform: translateY(6px); transition: opacity var(--dur-quick) var(--ease-out), transform var(--dur-quick) var(--ease-out); min-height: 1.4em; }
@@ -148,7 +148,7 @@
 .plate[data-look="d"] .kpi:not([data-key="members"]) .kpi-label { order: 1; }
 
 /* hairlines (draw with scaleX) */
-.rule-draw { transform: scaleX(0); transform-origin: left; transition: transform calc(240ms * var(--tempo, 1)) var(--ease-out); }
+.rule-draw { transform: scaleX(0); transform-origin: left; transition: transform calc(300ms * var(--tempo, 1)) var(--ease-out) calc(var(--d, 0ms) * var(--tempo, 1)); }
 .rule-draw[data-on="true"] { transform: scaleX(1); }
 .rule { position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--c-border-strong); display: none; }
 .plate[data-look="d"] .kpi:not([data-key="members"]) .rule { display: block; }
@@ -179,8 +179,6 @@
 .chart-area { fill: var(--c-g-accent1); opacity: .1; }
 .plate[data-look="d"] .chart-line { stroke: var(--c-text-primary); }
 .plate[data-look="d"] .chart-area { display: none; }
-.curtain { position: absolute; inset: -8px -60px -20px -40px; background: var(--c-g-card); transform: translateX(0); transition: transform calc(560ms * var(--tempo, 1)) var(--ease-out); }
-.curtain[data-on="true"] { transform: translateX(101%); }
 .chart-dot-wrap { position: absolute; width: 0; height: 0; opacity: 0; transition: opacity var(--dur-quick) var(--ease-out); }
 .chart-dot-wrap[data-on="true"] { opacity: 1; }
 .chart-dot { position: absolute; left: -6px; top: -6px; width: 12px; height: 12px; border-radius: 9999px; box-sizing: border-box; display: none; }
@@ -296,3 +294,31 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
 :root.dark .th-light { display: none; }
 :root.dark .th-dark { display: inline; }
 @media (prefers-color-scheme: dark) { :root:not(.light):not(.dark) .th-light { display: none; } :root:not(.light):not(.dark) .th-dark { display: inline; } }
+
+/* counting figure: tabular so the digits do not jitter; the spacer holds the final width */
+.count { display: inline-grid; font-variant-numeric: tabular-nums; }
+.count > * { grid-area: 1 / 1; }
+.count-spacer { visibility: hidden; }
+.count-now { text-align: left; }
+/* a figure the Check has confirmed speaks in the page's figure voice (Plex Mono, tabular) */
+.plate[data-look="g"] .fig[data-confirmed="true"] .run-gen { font-family: var(--font-mono), monospace; font-weight: 500; letter-spacing: -0.03em; }
+/* the line draws itself; the area under it fades in after */
+.chart-line { transition: stroke-dashoffset calc(700ms * var(--tempo, 1)) cubic-bezier(0.45, 0, 0.2, 1); }
+.chart-area { opacity: 0; transition: opacity calc(300ms * var(--tempo, 1)) var(--ease-out) calc(500ms * var(--tempo, 1)); }
+.chart[data-series="true"] .chart-area { opacity: .1; }
+.run { transition: opacity 70ms var(--ease-out), transform 160ms var(--ease-out); }
+/* the designed figure grows into place; the generated one leaves first, so no ghost overlaps it */
+.run-des { transform: scale(.6); transform-origin: left top; }
+.fig[data-align="right"] .run-des { transform-origin: right top; }
+.kpi[data-des="true"] .run-des, .chart[data-des="true"] .run-des { transform: none; transition: opacity 120ms var(--ease-out) 50ms, transform 180ms var(--ease-out) 30ms; }
+
+/* the traveling 61 replaces the old one at once; 47 enters after it has left */
+.kpi[data-key="resolved"] .val-old { transition: none; }
+.kpi[data-key="resolved"] .val-new[data-on="true"] { transition-delay: calc(220ms * var(--tempo, 1)); }
+
+/* the ledger rows arrive rather than cross the plate in a cluster: they fade in as they settle (opacity only) */
+.plate[data-look="d"][data-state="moving"] .kpi:not([data-key="members"]) { animation: arrive calc(280ms * var(--tempo, 1)) var(--ease-out) backwards; }
+.plate[data-look="d"][data-state="moving"] .kpi[data-key="open"] { animation-delay: calc(200ms * var(--tempo, 1)); }
+.plate[data-look="d"][data-state="moving"] .kpi[data-key="resolved"] { animation-delay: calc(250ms * var(--tempo, 1)); }
+.plate[data-look="d"][data-state="moving"] .kpi[data-key="closed"] { animation-delay: calc(300ms * var(--tempo, 1)); }
+@keyframes arrive { from { opacity: 0; } to { opacity: 1; } }

@@ -81,6 +81,33 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
   const { rest, moving, view, note, preview, open, announced, instant } = snap;
   // Beat B3 (bet B9): the figure 61 travels from the Resolved card to the new Closed card. A hand-made FLIP on
   // transform only (shared-layout opacity crossfades stalled at 360 px in the first build: friction T1.6-F5).
+  // The silent zero counts up to the held value (eased, tabular). Skips the four numbers the owner's notes forbid.
+  const [mCount, setMCount] = useState(tokens.membersHeld);
+  const prevFixed = useRef(true);
+  const rafRef = useRef(0);
+  useEffect(() => {
+    if (view.mFixed === prevFixed.current) return;
+    prevFixed.current = view.mFixed;
+    cancelAnimationFrame(rafRef.current);
+    if (!view.mFixed) { setMCount(tokens.membersShown); return; }
+    if (instant || reduced) { setMCount(tokens.membersHeld); return; }
+    const dur = 760 * (moving?.tempo === "compare" ? 0.55 : 1);
+    const t0 = performance.now();
+    const FORBID = [11, 12, 16, 34];
+    const tick = (now) => {
+      const k = Math.min(1, (now - t0) / dur);
+      let v = Math.round(tokens.membersHeld * (1 - Math.pow(1 - k, 3)));
+      while (k < 1 && FORBID.includes(v)) v += 1;
+      setMCount(k >= 1 ? tokens.membersHeld : v);
+      if (k < 1) rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+  }, [view.mFixed]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
+
+  // The line draws itself: dash length in screen px, measured (the stroke is non-scaling).
+  const svgRef = useRef(null);
+  const [lineLen, setLineLen] = useState(0);
   const lastFrom = useRef(null);
   useLayoutEffect(() => {
     const plate = plateRef.current; if (!plate) return;
@@ -131,6 +158,19 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
   const pts = series.map((v, i) => [(i / (series.length - 1)) * 100, 100 - (v / ymax) * 100]);
   const polyline = pts.map(([x, y]) => `${x.toFixed(2)},${y.toFixed(2)}`).join(" ");
   const area = `0,100 ${polyline} 100,100`;
+  useEffect(() => {
+    const el = svgRef.current; if (!el) return;
+    const box = el.parentElement; // layout size, not the transformed rect, so a mid-flight FLIP cannot skew it
+    const measure = () => {
+      const w = box.offsetWidth, h = box.offsetHeight; if (!w) return;
+      let L = 0;
+      for (let i = 1; i < pts.length; i++) L += Math.hypot(((pts[i][0] - pts[i - 1][0]) / 100) * w, ((pts[i][1] - pts[i - 1][1]) / 100) * h);
+      setLineLen(Math.ceil(L * 1.04) + 4);
+    };
+    measure();
+    const ro = new ResizeObserver(measure); ro.observe(box);
+    return () => ro.disconnect();
+  }, [view.look, view.series, view.closed]); // eslint-disable-line react-hooks/exhaustive-deps
   const lastPt = pts[pts.length - 1];
   const firstPt = pts[0];
   const chartAlt = T(
@@ -188,7 +228,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                   <span className="dash-title-des t-mono-label">{apos(copy.dashboardTitle)}</span>
                   <span className="gen-glyph-tile" aria-hidden="true"><GenGlyph /></span>
                 </m.p>
-                <span className="title-rule rule-draw" data-on={view.rules} aria-hidden="true" />
+                <span className="title-rule rule-draw" style={{ "--d": "0ms" }} data-on={view.rules} aria-hidden="true" />
 
                 {/* members: the lead figure in the Designed look */}
                 <m.article layout transition={lay(0)} className="kpi" data-key="members" data-testid="kpi-members" data-des={ty > 0} data-ov="lead"
@@ -198,31 +238,30 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                   <m.div layout="position" transition={lay(0)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.members)}</span></m.div>
                   <m.div layout="position" transition={lay(0)} className="kpi-fig">
                     <Fig des={ty > 0} genCls="t-g-kpi" desCls="t-figure-xl" confirmed={view.bm} preview={previewKind} previewText={figText}>
-                      <Reading oldV={d.membersShown} newV={d.membersHeld} fixed={view.mFixed} />
+                      <span className="count"><span className="count-spacer" aria-hidden="true">{d.membersHeld}</span><span className="count-now">{mCount}</span></span>
                     </Fig>
                   </m.div>
                   <m.p layout="position" transition={lay(0)} className="readout t-mono-sm" data-on={view.rm} data-testid="readout-members">{T(copy.defects[0].readout, d)}</m.p>
                 </m.article>
 
                 {/* the chart */}
-                <m.figure layout transition={lay(1)} className="chart" data-key="chart" data-testid="chart" data-des={ty > 1} data-ov="chart">
+                <m.figure layout transition={lay(1)} className="chart" data-key="chart" data-series={view.series} data-testid="chart" data-des={ty > 1} data-ov="chart">
                   <span className="chrome" aria-hidden="true" />
                   <m.figcaption layout="position" transition={lay(1)} className="chart-label"><span className="chart-label-text">{apos(copy.labels.chart)}</span></m.figcaption>
                   <div className="chart-body">
                     <div className="grid-lines" aria-hidden="true"><i /><i /><i /><i /></div>
-                    <div className="base-line rule-draw" data-on={view.rules} aria-hidden="true" />
+                    <div className="base-line rule-draw" style={{ "--d": "160ms" }} data-on={view.rules} aria-hidden="true" />
                     <div className="chart-inner">
                       <div className="line-layer">
-                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" role="img" aria-label={chartAlt} className="chart-svg">
+                        <svg ref={svgRef} viewBox="0 0 100 100" preserveAspectRatio="none" role="img" aria-label={chartAlt} className="chart-svg">
                           <polygon points={area} className="chart-area" />
-                          <polyline points={polyline} className="chart-line" fill="none" vectorEffect="non-scaling-stroke" />
+                          <polyline points={polyline} className="chart-line" fill="none" vectorEffect="non-scaling-stroke" style={hydrated && lineLen ? { strokeDasharray: lineLen, strokeDashoffset: view.series ? 0 : lineLen } : undefined} />
                         </svg>
                         <span className="chart-dot-wrap" style={{ left: `${lastPt[0]}%`, top: `${lastPt[1]}%` }} data-on={view.last} aria-hidden="true"><i className="chart-dot" /></span>
                         <span className="end-label end-first" style={{ top: `${firstPt[1]}%` }} aria-hidden="true" data-on={view.last}><span className="t-mono-sm">{d.seriesFirst}</span></span>
                         <span className="end-label end-last" style={{ top: `${lastPt[1]}%` }} data-on={view.last}>
                           <Fig des={ty > 1} genCls="t-g-label" desCls="t-figure-l" confirmed={view.bs} align="right"><span>{d.seriesLast}</span></Fig>
                         </span>
-                        <div className="curtain" data-on={view.series} aria-hidden="true" />
                       </div>
                       <div className="ticks" aria-hidden="true">
                         {series.map((_, i) => (
@@ -242,7 +281,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                 {/* tickets: cards in the Generated look, ledger rows in the Designed look */}
                 <m.article layout transition={lay(2)} className="kpi" data-key="open" data-testid="kpi-open" data-des={ty > 2} data-ov="ledger" aria-label={kpi("openTickets", 2, d.openHeld)}>
                   <span className="chrome" aria-hidden="true" />
-                  <span className="rule rule-draw" data-on={view.rules} aria-hidden="true" />
+                  <span className="rule rule-draw" style={{ "--d": "40ms" }} data-on={view.rules} aria-hidden="true" />
                   <span className="icon-tile" aria-hidden="true"><GenGlyph /></span>
                   <m.div layout="position" transition={lay(2)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.openTickets)}</span></m.div>
                   <span className="leader" aria-hidden="true" data-on={view.rules} />
@@ -253,7 +292,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
 
                 <m.article layout transition={lay(3)} className="kpi" data-key="resolved" data-testid="kpi-resolved" data-des={ty > 3} data-ov="ledger" aria-label={kpi("resolvedTickets", 3, view.rFixed ? d.resolvedHeld : d.resolvedShown)}>
                   <span className="chrome" aria-hidden="true" />
-                  <span className="rule rule-draw" data-on={view.rules} aria-hidden="true" />
+                  <span className="rule rule-draw" style={{ "--d": "80ms" }} data-on={view.rules} aria-hidden="true" />
                   <span className="icon-tile" aria-hidden="true"><GenGlyph /></span>
                   <m.div layout="position" transition={lay(3)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.resolvedTickets)}</span></m.div>
                   <span className="leader" aria-hidden="true" data-on={view.rules} />
@@ -268,7 +307,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                 {view.closed && (
                   <m.article layout transition={lay(4)} className="kpi kpi-closed" data-key="closed" data-testid="kpi-closed" data-des={ty > 4} data-ov="ledger" aria-label={kpi("closedTickets", 4, d.closedHeld)}>
                     <span className="chrome" aria-hidden="true" />
-                    <span className="rule rule-draw" data-on={view.rules} aria-hidden="true" />
+                    <span className="rule rule-draw" style={{ "--d": "120ms" }} data-on={view.rules} aria-hidden="true" />
                     <span className="icon-tile" aria-hidden="true"><GenGlyph /></span>
                     <m.div layout="position" transition={lay(4)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.closedTickets)}</span></m.div>
                     <span className="leader" aria-hidden="true" data-on={view.rules} />
