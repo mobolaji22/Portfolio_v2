@@ -9,7 +9,8 @@
 @media (min-width: 480px) { .demo-toolbar { grid-template-columns: minmax(0, 420px) auto auto; gap: 16px; } }
 .demo-primary { min-height: 40px; }
 @media (max-width: 479px) { .demo-primary { width: 100%; min-height: 48px; } .demo-reset { justify-self: center; } }
-.label-fade { animation: fade-in var(--dur-quick) var(--ease-out) both; }
+.label-fade { animation: fade-in var(--dur-quick) var(--ease-out) backwards; }
+.kpi-closed { animation: fade-in var(--dur-move) var(--ease-out) backwards; }
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 
 /* ---- scrubber ---- */
@@ -209,12 +210,12 @@
 .fig-preview .hatch { display: block; width: 100%; height: 100%; background-image: repeating-linear-gradient(45deg, var(--c-border-strong) 0 1px, transparent 1px 8px); }
 
 /* scan line */
-.scan { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--c-text-primary); z-index: 5; pointer-events: none; animation: scan-run 420ms linear both; }
+.scan { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: var(--c-text-primary); z-index: 5; pointer-events: none; animation: scan-run 420ms linear forwards; }
 @keyframes scan-run { from { transform: translateY(0); } to { transform: translateY(var(--scan-dist, 500px)); } }
 
 /* ---- caption, findings, notes, credits ---- */
 .demo-caption { margin-top: 20px; }
-.cap-fade { animation: cap-in var(--dur-quick) var(--ease-out) both; }
+.cap-fade { animation: cap-in var(--dur-quick) var(--ease-out) backwards; }
 @keyframes cap-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 .cap-sub { margin-top: 4px; color: var(--c-text-secondary); }
 .cap-gloss { margin-top: 4px; color: var(--c-text-muted); }
@@ -272,3 +273,20 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
 @container plate (min-width: 456px) { .screen { --screen-min: 614px; } }
 @container plate (min-width: 520px) { .screen { --screen-min: 570px; } }
 @container plate (min-width: 690px) { .screen { --screen-min: 534px; } }
+
+/* ---- Designed-note overlays (decorative; ink, never the accent) ---- */
+.ov { position: absolute; inset: 0; z-index: 6; pointer-events: none; }
+.ov-disc { position: absolute; width: 22px; height: 22px; border-radius: 9999px; background: var(--c-text-primary); color: var(--c-surface-page); display: flex; align-items: center; justify-content: center; }
+.ov-rhythm { position: absolute; left: 0; top: 0; width: 6px; background-image: repeating-linear-gradient(to bottom, var(--c-text-primary) 0 1px, transparent 1px 8px); opacity: .3; }
+.ov-gap { position: absolute; background: var(--c-text-primary); opacity: .3; }
+.ov-dash { position: absolute; border: 1.5px dashed var(--c-text-primary); }
+.ov-motion { display: grid; gap: 3px; height: auto; inset: auto; }
+.ov-bar { display: block; height: 6px; background: var(--c-text-primary); opacity: .7; }
+/* Focus note: show where the keys land, in tab order */
+.demo[data-note="focus"] [data-tabn] { position: relative; outline: 3px solid var(--c-focus-ring); outline-offset: 2px; }
+.demo[data-note="focus"] [data-tabn]::after { content: attr(data-tabn); position: absolute; top: -12px; right: -8px; min-width: 18px; height: 18px; padding: 0 4px; background: var(--c-text-primary); color: var(--c-surface-page); font: 500 11px/18px var(--font-mono), monospace; text-align: center; border-radius: 9999px; z-index: 7; }
+.demo[data-note="focus"] .scrub-thumb[data-tabn]::after { top: -14px; right: -10px; }
+
+.fig-preview .t-mono-sm { white-space: nowrap; color: var(--c-text-muted); }
+.plate[data-look="d"] .kpi:not([data-key="members"]) .kpi-fig:has(.fig-preview) { width: 120px; }
+.ov-motion { right: 20px; }

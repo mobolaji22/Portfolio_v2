@@ -77,6 +77,8 @@ export default function CasePage({ params }) {
       <div className="mt-10 md:mt-14"><CaseFigure study={s} /></div>
 
       <div className="mt-12 md:mt-16">
+        {/* stages are h3 (spec N9); a structural h2 keeps the outline from skipping a level. Existing string, not new copy. */}
+        <h2 className="sr-only">{typo(c.work.lead)}</h2>
         {s.lookedFinished && (
           <Stage label={L.looked} claims={s.lookedFinished.claims} testid="st-looked">
             <p className="t-lead prose-measure">{typo(s.lookedFinished.text)}</p>
@@ -113,7 +115,7 @@ export default function CasePage({ params }) {
               {c.receipts.map((r) => (
                 <li key={r.id} className="flex flex-wrap items-baseline gap-x-4">
                   <span className="idx">{r.id}</span>
-                  <ExternalLink href={evidenceUrl(r.claims[0])} className="link font-mono text-[.8125rem] mono-break">{typo(r.linkLabel)}</ExternalLink>
+                  <ExternalLink href={evidenceUrl(r.claims[0])} className="link tl font-mono text-[.8125rem] mono-break">{typo(r.linkLabel)}</ExternalLink>
                 </li>
               ))}
             </ul>

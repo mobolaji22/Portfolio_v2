@@ -57,7 +57,7 @@ export default function Scrubber({ rest, names, label, valueText, onCommit }) {
         <div className="scrub-fill" aria-hidden="true" style={{ transform: `scaleX(${w ? fillW / w : 0})` }} />
         {[0, 1, 2].map((i) => <span key={i} className="scrub-detent" aria-hidden="true" style={{ left: `${i * 50}%` }} />)}
         <div
-          role="slider" tabIndex={0} className="scrub-thumb" data-dragging={drag !== null}
+          role="slider" tabIndex={0} data-tabn="1" className="scrub-thumb" data-dragging={drag !== null}
           aria-label={label} aria-valuemin={1} aria-valuemax={3} aria-valuenow={rest}
           aria-valuetext={valueText} aria-orientation="horizontal"
           style={{ transform: `translateX(${x - 14}px)` }}

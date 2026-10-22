@@ -35,7 +35,7 @@ export default function Receipts({ counts }) {
                 <p className="t-body-sm mt-2 text-ink-2 prose-measure">{typo(r.text)}</p>
               </div>
               <div className="col-span-4 flex flex-col items-start gap-3 md:col-span-4 md:col-start-9">
-                {url && <ExternalLink href={url} className="link font-mono text-[.8125rem] mono-break">{typo(r.linkLabel)}</ExternalLink>}
+                {url && <ExternalLink href={url} className="link tl font-mono text-[.8125rem] mono-break">{typo(r.linkLabel)}</ExternalLink>}
                 <TagChips claims={r.claims} link={false} />
               </div>
             </li>

@@ -188,3 +188,7 @@
 .cf-slot { display: inline-block; min-width: 120px; min-height: 40px; border: 1.5px dashed var(--c-border-strong); border-radius: 2px; }
 .cf-bare { display: inline-block; padding: 10px 0; }
 .cf-row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--c-border-strong); border-bottom: 1px solid var(--c-border-strong); }
+
+/* list links stand alone (not inline in a sentence): give them the 24 px target floor */
+.tl { display: inline-flex; align-items: center; min-height: 24px; }
+@media (pointer: coarse) { .tl { min-height: 44px; } }

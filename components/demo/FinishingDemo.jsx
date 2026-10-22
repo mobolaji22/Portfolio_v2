@@ -120,6 +120,8 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
     announced === 1 ? copy.labels.chartAltGenerated : announced === 2 ? copy.labels.chartAltChecked : copy.labels.chartAltDesigned, d);
   const previewKind = isDesignedRest && note === "states" ? PREVIEWS[preview] : "data";
   const previewText = { loading: copy.states.loading, empty: copy.states.empty, error: copy.states.error }[previewKind];
+  // in the error preview every figure reads "Not checked." and no zero is drawn (spec 5.11)
+  const figText = previewKind === "error" ? copy.states.notChecked : previewText;
   const [scanDist, setScanDist] = useState(0);
   useEffect(() => { if (view.scan && plateRef.current) setScanDist(plateRef.current.clientHeight); }, [view.scan]);
 
@@ -131,7 +133,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
       <MotionConfig reducedMotion="user">
         <section
           id="finishing-demo" data-demo="" data-hydrated={hydrated ? "" : undefined} tabIndex={-1}
-          aria-label={copy.regionLabel} className="demo"
+          aria-label={copy.regionLabel} className="demo" data-note={note && isDesignedRest ? note : undefined}
         >
           <p className="demo-hint t-mono-label js-only" data-testid="hint" hidden={!hydrated}>{apos(hint)}</p>
           {reduced && <p className="demo-reduced t-mono-label" data-testid="reduced-note">{apos(copy.reducedMotion)}</p>}
@@ -142,12 +144,12 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
               label={copy.controls.scrubberLabel} valueText={valueText}
               onCommit={(n) => dispatch({ type: "SCRUB", n })}
             />
-            <button ref={primaryRef} type="button" className={`btn ${primary.cls} demo-primary`} data-testid="primary" aria-busy={loading ? "true" : undefined}
+            <button ref={primaryRef} type="button" data-tabn="2" className={`btn ${primary.cls} demo-primary`} data-testid="primary" aria-busy={loading ? "true" : undefined}
               onClick={() => dispatch({ type: primary.ev })}>
               <span key={loading ? "loading" : primary.label} className="label-fade">{apos(loading ? copy.states.loading : primary.label)}</span>
             </button>
             {rest !== 1 && (
-              <button ref={resetRef} type="button" className="btn btn-ghost demo-reset" data-testid="reset" onClick={onReset}>{apos(copy.controls.reset)}</button>
+              <button ref={resetRef} type="button" data-tabn="3" className="btn btn-ghost demo-reset" data-testid="reset" onClick={onReset}>{apos(copy.controls.reset)}</button>
             )}
           </div>
 
@@ -178,7 +180,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                   <span className="icon-tile" aria-hidden="true"><GenGlyph /></span>
                   <m.div layout="position" transition={lay(0)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.members)}</span></m.div>
                   <m.div layout="position" transition={lay(0)} className="kpi-fig">
-                    <Fig des={ty > 0} genCls="t-g-kpi" desCls="t-figure-xl" confirmed={view.bm} preview={previewKind} previewText={previewText}>
+                    <Fig des={ty > 0} genCls="t-g-kpi" desCls="t-figure-xl" confirmed={view.bm} preview={previewKind} previewText={figText}>
                       <Reading oldV={d.membersShown} newV={d.membersHeld} fixed={view.mFixed} />
                     </Fig>
                   </m.div>
@@ -228,7 +230,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                   <m.div layout="position" transition={lay(2)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.openTickets)}</span></m.div>
                   <span className="leader" aria-hidden="true" data-on={view.rules} />
                   <m.div layout="position" transition={lay(2)} className="kpi-fig">
-                    <Fig des={ty > 2} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.bo} align="right" preview={previewKind} previewText={previewText}><span className="val val-new" data-on="true">{d.openHeld}</span></Fig>
+                    <Fig des={ty > 2} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.bo} align="right" preview={previewKind} previewText={figText}><span className="val val-new" data-on="true">{d.openHeld}</span></Fig>
                   </m.div>
                 </m.article>
 
@@ -239,7 +241,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                   <m.div layout="position" transition={lay(3)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.resolvedTickets)}</span></m.div>
                   <span className="leader" aria-hidden="true" data-on={view.rules} />
                   <m.div layout="position" transition={lay(3)} className="kpi-fig">
-                    <Fig des={ty > 3} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.br} align="right" preview={previewKind} previewText={previewText}>
+                    <Fig des={ty > 3} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.br} align="right" preview={previewKind} previewText={figText}>
                       <Reading oldV={d.resolvedShown} newV={d.resolvedHeld} fixed={view.rFixed} travelId="fig-61" travel={hydrated && !instant} />
                     </Fig>
                   </m.div>
@@ -247,15 +249,14 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                 </m.article>
 
                 {view.closed && (
-                  <m.article layout transition={lay(4)} className="kpi kpi-closed" data-key="closed" data-testid="kpi-closed" data-des={ty > 4} data-ov="ledger" aria-label={kpi("closedTickets", 4, d.closedHeld)}
-                    initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <m.article layout transition={lay(4)} className="kpi kpi-closed" data-key="closed" data-testid="kpi-closed" data-des={ty > 4} data-ov="ledger" aria-label={kpi("closedTickets", 4, d.closedHeld)}>
                     <span className="chrome" aria-hidden="true" />
                     <span className="rule rule-draw" data-on={view.rules} aria-hidden="true" />
                     <span className="icon-tile" aria-hidden="true"><GenGlyph /></span>
                     <m.div layout="position" transition={lay(4)} className="kpi-label"><span className="pill-chrome" aria-hidden="true" /><span className="kpi-label-text">{apos(copy.labels.closedTickets)}</span></m.div>
                     <span className="leader" aria-hidden="true" data-on={view.rules} />
                     <m.div layout="position" transition={lay(4)} className="kpi-fig">
-                      <Fig des={ty > 4} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.bc} align="right" preview={previewKind} previewText={previewText}>
+                      <Fig des={ty > 4} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.bc} align="right" preview={previewKind} previewText={figText}>
                         <span className="val val-new" data-on="true"><m.span layoutId="fig-61" className="val-travel">{d.closedHeld}</m.span></span>
                       </Fig>
                     </m.div>
@@ -286,7 +287,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
               const isOpen = open.includes(df.id);
               return (
                 <li key={df.id} className="finding" data-on={on} aria-hidden={on ? undefined : "true"}>
-                  <button type="button" className="finding-btn t-mono-label" aria-expanded={isOpen} tabIndex={on ? 0 : -1}
+                  <button type="button" data-tabn={4 + i} className="finding-btn t-mono-label" aria-expanded={isOpen} tabIndex={on ? 0 : -1}
                     aria-controls={`finding-${df.id}`} onClick={() => dispatch({ type: "FINDING", id: df.id })}>
                     <span className="finding-name">{apos(df.name)}</span>
                     <span className="finding-read">{T(df.readout, d)}{i === 2 && df.caption ? ` ${apos(df.caption)}` : ""}</span>
@@ -300,7 +301,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
           <div className="notes js-only" data-on={view.notes} data-testid="notes" hidden={!hydrated || !(view.notes || rest === 3)}>
             <div className="notes-row" role="group" aria-label={apos(copy.regionLabel)}>
               {copy.notes.map((nt, i) => (
-                <button key={nt.id} type="button" className="note-btn t-ui-sm" aria-pressed={note === nt.id} tabIndex={view.notes && isDesignedRest ? 0 : -1}
+                <button key={nt.id} type="button" data-tabn={7 + i} className="note-btn t-ui-sm" aria-pressed={note === nt.id} tabIndex={view.notes && isDesignedRest ? 0 : -1}
                   style={{ transitionDelay: `${i * 40}ms` }} onClick={() => dispatch({ type: "NOTE", k: nt.id })}>{apos(nt.label)}</button>
               ))}
             </div>

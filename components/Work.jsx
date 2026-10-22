@@ -57,7 +57,7 @@ export default function Work() {
             </div>
             <div className="col-span-4 md:col-span-6">
               <p className="t-body-sm prose-measure">{typo(e.text)}</p>
-              <p className="mt-3"><ExternalLink href={evidenceUrl("CL-12")} className="link font-mono text-[.8125rem]">{typo(e.linkLabel)}</ExternalLink></p>
+              <p className="mt-3"><ExternalLink href={evidenceUrl("CL-12")} className="link tl font-mono text-[.8125rem]">{typo(e.linkLabel)}</ExternalLink></p>
             </div>
             <div className="col-span-4 md:col-span-3"><TagChips claims={e.claims} /></div>
           </div>

@@ -19,9 +19,7 @@
   background: var(--c-mark-fill); transform-origin: left; transform: scaleX(1);
 }
 .mk { color: var(--c-mark-ink); }
-.mk-hero::before { transform: scaleX(0); }
-html.js .mk-hero::before { animation: swipe var(--dur-swipe) var(--ease-out) 600ms both; }
-html:not(.js) .mk-hero::before { transform: scaleX(1); }
+html.js .mk-hero::before { animation: swipe var(--dur-swipe) var(--ease-out) 600ms backwards; }
 @keyframes swipe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
 :root.dark .mk { color: var(--c-text-primary); }
