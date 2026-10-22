@@ -42,11 +42,11 @@ function Fig({ des, genCls, desCls, confirmed, hidden, children, align, preview,
 }
 
 // a value with an old (wrong) and a new (checked) reading; the new one sizes the figure
-function Reading({ oldV, newV, fixed, travelId, travel }) {
+function Reading({ oldV, newV, fixed, travelId }) {
   return (
     <>
       <span className="val val-old" data-on={!fixed}>
-        {travelId && !fixed && travel ? <m.span layoutId={travelId} className="val-travel">{oldV}</m.span> : <span className="val-travel">{oldV}</span>}
+        <span className="val-travel" data-travel={travelId}>{oldV}</span>
       </span>
       <span className="val val-new" data-on={fixed}>{newV}</span>
     </>
@@ -79,6 +79,23 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
   }, [ctrl]);
 
   const { rest, moving, view, note, preview, open, announced, instant } = snap;
+  // Beat B3 (bet B9): the figure 61 travels from the Resolved card to the new Closed card. A hand-made FLIP on
+  // transform only (shared-layout opacity crossfades stalled at 360 px in the first build: friction T1.6-F5).
+  const lastFrom = useRef(null);
+  useLayoutEffect(() => {
+    const plate = plateRef.current; if (!plate) return;
+    if (!view.closed) {
+      const old = plate.querySelector('[data-testid="kpi-resolved"] .val-old .val-travel');
+      if (old) lastFrom.current = old.getBoundingClientRect();
+      return;
+    }
+    const el = plate.querySelector('[data-testid="closed-61"]');
+    if (el && lastFrom.current && !instant && !reduced && moving) {
+      const to = el.getBoundingClientRect(); const f = lastFrom.current;
+      el.animate([{ transform: `translate(${f.left - to.left}px, ${f.top - to.top}px)` }, { transform: "none" }], { duration: 320 * (moving.tempo === "compare" ? 0.55 : 1), easing: "cubic-bezier(0.65, 0, 0.35, 1)" });
+    }
+    lastFrom.current = null;
+  }, [view.closed]); // eslint-disable-line react-hooks/exhaustive-deps
   const d = tokens;
   const dispatch = useCallback((ev) => ctrl.dispatch(ev), [ctrl]);
 
@@ -242,7 +259,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                   <span className="leader" aria-hidden="true" data-on={view.rules} />
                   <m.div layout="position" transition={lay(3)} className="kpi-fig">
                     <Fig des={ty > 3} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.br} align="right" preview={previewKind} previewText={figText}>
-                      <Reading oldV={d.resolvedShown} newV={d.resolvedHeld} fixed={view.rFixed} travelId="fig-61" travel={hydrated && !instant} />
+                      <Reading oldV={d.resolvedShown} newV={d.resolvedHeld} fixed={view.rFixed} travelId="fig-61" />
                     </Fig>
                   </m.div>
                   <m.p layout="position" transition={lay(3)} className="readout t-mono-sm" data-on={view.rr} data-testid="readout-resolved">{T(copy.defects[2].readout, d)}</m.p>
@@ -257,7 +274,7 @@ export default function FinishingDemo({ copy, tokens, source, chips, noJsBody, c
                     <span className="leader" aria-hidden="true" data-on={view.rules} />
                     <m.div layout="position" transition={lay(4)} className="kpi-fig">
                       <Fig des={ty > 4} genCls="t-g-kpi" desCls="t-figure-l" confirmed={view.bc} align="right" preview={previewKind} previewText={figText}>
-                        <span className="val val-new" data-on="true"><m.span layoutId="fig-61" className="val-travel">{d.closedHeld}</m.span></span>
+                        <span className="val val-new" data-on="true"><span className="val-travel" data-travel="fig-61" data-testid="closed-61">{d.closedHeld}</span></span>
                       </Fig>
                     </m.div>
                   </m.article>
