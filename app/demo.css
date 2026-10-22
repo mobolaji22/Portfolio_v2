@@ -304,8 +304,8 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
 .plate[data-look="g"] .fig[data-confirmed="true"] .run-gen { font-family: var(--font-mono), monospace; font-weight: 500; letter-spacing: -0.03em; }
 /* the line draws itself; the area under it fades in after */
 .chart-line { transition: stroke-dashoffset calc(700ms * var(--tempo, 1)) cubic-bezier(0.45, 0, 0.2, 1); }
-.chart-area { opacity: 0; transition: opacity calc(300ms * var(--tempo, 1)) var(--ease-out) calc(500ms * var(--tempo, 1)); }
-.chart[data-series="true"] .chart-area { opacity: .1; }
+.chart-area { opacity: 0; transition: opacity calc(200ms * var(--tempo, 1)) var(--ease-out); }
+.chart[data-series="true"] .chart-area { opacity: .1; transition: opacity calc(300ms * var(--tempo, 1)) var(--ease-out) calc(500ms * var(--tempo, 1)); }
 .run { transition: opacity 70ms var(--ease-out), transform 160ms var(--ease-out); }
 /* the designed figure grows into place; the generated one leaves first, so no ghost overlaps it */
 .run-des { transform: scale(.6); transform-origin: left top; }
@@ -322,3 +322,5 @@ html.demo-guard [data-demo] .plate, html.demo-guard [data-demo] .demo-caption, h
 .plate[data-look="d"][data-state="moving"] .kpi[data-key="resolved"] { animation-delay: calc(250ms * var(--tempo, 1)); }
 .plate[data-look="d"][data-state="moving"] .kpi[data-key="closed"] { animation-delay: calc(300ms * var(--tempo, 1)); }
 @keyframes arrive { from { opacity: 0; } to { opacity: 1; } }
+/* going back, the cards land rather than cross the plate in view */
+.plate[data-look="g"][data-from="3"][data-state="moving"] .kpi { animation: arrive calc(260ms * var(--tempo, 1)) var(--ease-out) calc(220ms * var(--tempo, 1)) backwards; }
