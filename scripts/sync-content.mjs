@@ -35,6 +35,21 @@ function strip(node, trail) {
 
 const out = strip(input, []);
 
+// Strings that exist only inside visualBrief fields (which are builder notes and are stripped), but that
+// Design's spec 7 tells Engineering to reuse as figure labels. Extracted by pattern, never retyped.
+const brief = (id) => input.caseStudies.find((s) => s.id === id).visualBrief;
+const cap = brief("cake-studio").match(/captioned '([^']+)'/);
+const pay = brief("payments-webhooks").match(/'(Awaiting deposit)' and '(Deposit paid)'/);
+if (!cap || !pay) throw new Error("visualBrief no longer carries the expected strings");
+out.visuals = {
+  // spec 14 item 2: not a content key; the string as written in OUTPUT-FOR-DESIGN section 5
+  demonstrationData: "Demonstration data",
+  cakeCaption: cap[1],
+  paymentsBefore: pay[1],
+  paymentsAfter: pay[2],
+  paymentsRow: "Booking",
+};
+
 // claims: keep only what the build needs to tag and link. No claim text, no internal guards.
 out.claims = input.claims.map((c) => {
   const keep = { id: c.id, tag: c.tag ?? null, shippable: c.shippable, evidenceUrl: c.evidenceUrl ?? null };

@@ -28,10 +28,10 @@ export function TagChip({ tag, href }) {
 }
 
 // The chips of a unit: one per distinct tag of its shippable claims, generated (N7).
-export default function TagChips({ claims, className = "chips" }) {
+export default function TagChips({ claims, className = "chips", link = true }) {
   const tags = tagsFor(claims);
   if (!tags.length) return null;
-  const url = checkUrl(claims);
+  const url = link ? checkUrl(claims) : null;
   return (
     <div className={className} data-claims={claims.join(" ")}>
       {tags.map((t) => <TagChip key={t} tag={t} href={t === "check" ? url : null} />)}

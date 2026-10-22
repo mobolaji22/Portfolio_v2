@@ -1814,5 +1814,12 @@
    "shippable": "shippable",
    "evidenceUrl": null
   }
- ]
+ ],
+ "visuals": {
+  "demonstrationData": "Demonstration data",
+  "cakeCaption": "Queried: resolved. On screen: nothing.",
+  "paymentsBefore": "Awaiting deposit",
+  "paymentsAfter": "Deposit paid",
+  "paymentsRow": "Booking"
+ }
 }
