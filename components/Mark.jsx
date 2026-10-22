@@ -1,0 +1,10 @@
+// The MO mark (file 07 7.2): outlined paths from Instrument Sans 700, cap height 18 in a 64 viewBox.
+// Disc is ink, letters are paper; both invert with the theme through the tokens.
+export default function Mark({ size = 40 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <circle cx="32" cy="32" r="32" fill="var(--c-text-primary)" />
+      <path fill="var(--c-surface-page)" d="M11.95 41V23H17.95L22.95 40.35H20.77L25.77 23H31.8V41H28V24.07H28.65L23.77 41H19.8L14.97 24.22H15.6V41ZM42.52 41.25Q40.52 41.25 38.84 40.58Q37.15 39.9 35.91 38.66Q34.67 37.42 33.99 35.71Q33.3 34 33.3 31.92Q33.3 29.17 34.47 27.11Q35.65 25.05 37.74 23.9Q39.82 22.75 42.5 22.75Q45.22 22.75 47.3 23.9Q49.38 25.05 50.56 27.12Q51.75 29.2 51.75 31.95Q51.75 34 51.06 35.71Q50.38 37.42 49.14 38.66Q47.9 39.9 46.21 40.58Q44.52 41.25 42.52 41.25ZM42.5 38.2Q44.07 38.2 45.27 37.4Q46.47 36.6 47.16 35.19Q47.85 33.77 47.85 31.9Q47.85 30.05 47.17 28.67Q46.5 27.3 45.3 26.55Q44.1 25.8 42.5 25.8Q40.92 25.8 39.72 26.55Q38.52 27.3 37.86 28.66Q37.2 30.02 37.2 31.9Q37.2 33.8 37.88 35.21Q38.55 36.62 39.75 37.41Q40.95 38.2 42.5 38.2Z" />
+    </svg>
+  );
+}

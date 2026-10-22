@@ -1,0 +1,73 @@
+/* THE ACCENT (N1). This is the only file that may reference --c-mark-fill / --c-mark-ink.
+   Roles: R1 bar under a checked figure; R2 word swipe / bar and link hover; R3 mark buttons
+   (uses --c-action-mark-*); R4 selected lens option; R5 last-point dot. scripts/check-accent.mjs enforces this. */
+
+/* R1: the bar. Decorative; the meaning is the readout sentence and the tick. */
+.fig-wrap { position: relative; display: inline-block; }
+.fig-bar {
+  position: absolute; left: 0; right: 0; top: calc(100% + .06em); height: max(3px, .12em);
+  background: var(--c-mark-fill); transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-move) var(--ease-out);
+  pointer-events: none;
+}
+.fig-bar[data-on="true"] { transform: scaleX(1); }
+
+/* R2: the word. Light: a swipe behind the word. Dark: a bar under it. */
+.mk { position: relative; display: inline-block; z-index: 0; font-style: inherit; background: none; color: inherit; }
+.mk::before {
+  content: ""; position: absolute; z-index: -1; left: -.06em; right: -.06em; top: 8%; bottom: 0;
+  background: var(--c-mark-fill); transform-origin: left; transform: scaleX(1);
+}
+.mk { color: var(--c-mark-ink); }
+.mk-hero::before { transform: scaleX(0); }
+html.js .mk-hero::before { animation: swipe var(--dur-swipe) var(--ease-out) 600ms both; }
+html:not(.js) .mk-hero::before { transform: scaleX(1); }
+@keyframes swipe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+:root.dark .mk { color: var(--c-text-primary); }
+:root.dark .mk::before { top: auto; height: .16em; bottom: -.04em; }
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) .mk { color: var(--c-text-primary); }
+  :root:not(.light):not(.dark) .mk::before { top: auto; height: .16em; bottom: -.04em; }
+}
+
+/* links: the mark on hover and focus. Light: swipe (the one named exception to N3, 120 ms). */
+a.link, .nav-link, .row-title {
+  background-image: linear-gradient(var(--c-mark-fill), var(--c-mark-fill));
+  background-repeat: no-repeat; background-position: 0 100%; background-size: 0 100%;
+  transition: background-size var(--dur-quick) var(--ease-out);
+}
+a.link:hover, a.link:focus-visible, .nav-link:hover, .nav-link:focus-visible,
+.work-row:hover .row-title, .work-row:focus-within .row-title { background-size: 100% 100%; color: var(--c-mark-ink); }
+:root.dark a.link, :root.dark .nav-link, :root.dark .row-title { background-image: none; transition: none; }
+:root.dark a.link:hover, :root.dark a.link:focus-visible, :root.dark .nav-link:hover, :root.dark .nav-link:focus-visible,
+:root.dark .work-row:hover .row-title, :root.dark .work-row:focus-within .row-title {
+  color: var(--c-text-primary); text-decoration-color: var(--c-mark-fill); text-decoration-thickness: .16em; text-decoration-line: underline;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) a.link, :root:not(.light):not(.dark) .nav-link, :root:not(.light):not(.dark) .row-title { background-image: none; transition: none; }
+  :root:not(.light):not(.dark) a.link:hover, :root:not(.light):not(.dark) .nav-link:hover,
+  :root:not(.light):not(.dark) .work-row:hover .row-title {
+    color: var(--c-text-primary); text-decoration-color: var(--c-mark-fill); text-decoration-thickness: .16em; text-decoration-line: underline;
+  }
+}
+.row-title { display: inline; }
+
+/* R3: the demo's two action buttons */
+.btn-mark { background: var(--c-action-mark-bg); color: var(--c-action-mark-fg); border-color: var(--c-action-mark-border); }
+.btn-mark:hover { box-shadow: inset 0 0 0 4.5px var(--c-action-mark-bg), inset 0 0 0 6px var(--c-action-mark-fg); }
+
+/* R4: the selected lens option: filled, ink text, plus a 3 px bar so it is not colour alone */
+.lens-opt[aria-checked="true"] { background: var(--c-mark-fill); color: var(--c-mark-ink); box-shadow: inset 0 -3px 0 var(--c-mark-ink); }
+
+/* R5: the last point of the sign-ups line */
+.chart-dot { background: var(--c-mark-fill); border: 1.5px solid var(--c-mark-ink); }
+:root.dark .chart-dot { border-color: var(--c-mark-ink); }
+
+@media (forced-colors: active) {
+  .fig-bar, .mk::before { background: Highlight; forced-color-adjust: none; }
+  .mk { color: CanvasText; text-decoration: underline; }
+  .btn-mark { border-color: ButtonText; }
+  .lens-opt[aria-checked="true"] { border-bottom: 3px solid CanvasText; background: Highlight; color: HighlightText; }
+  .chart-dot { background: Highlight; border-color: CanvasText; }
+}

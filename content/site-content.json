@@ -1,0 +1,1784 @@
+{
+ "settings": {
+  "arsididiNamed": true,
+  "practiceVoice": "owner",
+  "aiRung": "A",
+  "velvetiiNamed": false,
+  "showKoboLab": false,
+  "showAvFour": false
+ },
+ "meta": {
+  "siteName": "Mobolaji",
+  "title": "Mobolaji, front-end engineer in Nigeria",
+  "titleTemplate": "%s | Mobolaji",
+  "description": "Front-end engineer in Nigeria, open to remote full-time front-end developer roles and freelance projects. Generated UI looks finished. I finish it.",
+  "canonical": {
+   "value": null
+  },
+  "lang": "en",
+  "robots": "index, follow",
+  "openGraph": {
+   "type": "website",
+   "title": "Generated UI looks finished. That's the problem.",
+   "description": "I'm Mobolaji, a front-end engineer in Nigeria. Watch one dashboard go from generated to checked to designed, then check my claims yourself.",
+   "siteName": "Mobolaji",
+   "locale": "en",
+   "image": {
+    "value": null,
+    "alt": "The Finishing demo: one dashboard shown as Generated, Checked and Designed."
+   }
+  },
+  "twitter": {
+   "card": "summary_large_image",
+   "title": "Generated UI looks finished. That's the problem.",
+   "description": "I finish it. A front-end engineer in Nigeria."
+  },
+  "pages": {
+   "arsididi-admin": {
+    "title": "ARSIDIDI admin dashboard",
+    "description": "A dashboard is a thing people act on. What looked finished on this admin dashboard, what wasn't, and what it needed."
+   },
+   "arsididi-student": {
+    "title": "ARSIDIDI student web app",
+    "description": "A filter bar that filtered nothing and a list that dropped every real item. What a student web app needed to be finished."
+   },
+   "cake-studio": {
+    "title": "A Lagos cake studio's storefront",
+    "description": "The build passed and the page had no accent colour. Why a green build proves little."
+   },
+   "payments-webhooks": {
+    "title": "When the screen says paid",
+    "description": "A deposit tool for Nigerian small businesses: signed payment events, replayed events and money held as whole kobo."
+   },
+   "command-center": {
+    "title": "A command center that hides what the back end can't do",
+    "description": "A public front-end repository where every screen reaches data through one interface."
+   }
+  },
+  "jsonLd": {
+   "@context": "https://schema.org",
+   "@type": "ProfilePage",
+   "name": "Mobolaji, front-end engineer in Nigeria",
+   "url": "{SITE_URL}/",
+   "inLanguage": "en",
+   "mainEntity": {
+    "@type": "Person",
+    "name": "Mobolaji Ola",
+    "alternateName": "Mobolaji",
+    "jobTitle": "Front-end engineer",
+    "description": "Front-end engineer in Nigeria. Open to full-time remote front-end roles and to freelance projects. Works with AI tools; the work is directed and reviewed by Mobolaji.",
+    "url": "{SITE_URL}/",
+    "address": {
+     "@type": "PostalAddress",
+     "addressCountry": "NG"
+    },
+    "image": null,
+    "sameAs": [
+     "https://github.com/mobolaji22",
+     "https://www.linkedin.com/in/mobolaji-ola-313295317/"
+    ],
+    "knowsAbout": [
+     "React",
+     "Next.js",
+     "Tailwind CSS",
+     "TanStack Query"
+    ]
+   },
+   "claims": [
+    "CL-70",
+    "CL-71",
+    "CL-72",
+    "CL-73",
+    "CL-74",
+    "CL-75",
+    "CL-77"
+   ]
+  },
+  "llmsTxt": [
+   "# Mobolaji",
+   "> Front-end engineer in Nigeria. Open to full-time remote front-end roles, and also to freelance projects. Flexible with working hours.",
+   "Generated UI looks finished. That's the problem. I finish it: I check a screen against the source, then I design it.",
+   "I use AI tools to build interfaces. I direct the work and I review it, and I check what comes back against the source.",
+   "Every claim on the site carries a tag: Check it yourself (a public file, pinned to a commit), Shown (a case study, on sample data) or My word (nothing public backs it).",
+   "Contact: {SITE_URL}/#contact"
+  ],
+  "claims": [
+   "CL-70",
+   "CL-71",
+   "CL-72",
+   "CL-73",
+   "CL-74",
+   "CL-75"
+  ]
+ },
+ "nav": {
+  "markLabel": "Mobolaji, home",
+  "skipLink": "Skip to the demo",
+  "ariaLabel": "Main",
+  "items": [
+   {
+    "id": "work",
+    "label": "Work",
+    "href": "#work"
+   },
+   {
+    "id": "how-i-work",
+    "label": "How I work",
+    "href": "#how-i-work"
+   },
+   {
+    "id": "about",
+    "label": "About",
+    "href": "#about"
+   },
+   {
+    "id": "contact",
+    "label": "Write to me",
+    "href": "#contact"
+   }
+  ],
+  "theme": {
+   "toDark": "Switch to dark theme",
+   "toLight": "Switch to light theme",
+   "visibleLabel": "Theme"
+  }
+ },
+ "hero": {
+  "eyebrow": "Mobolaji · Front-end engineer · Nigeria",
+  "h1": "Generated UI looks finished. That's the problem.",
+  "sub": "I finish it.",
+  "definition": "Finished means two things: correct, then considered.",
+  "preStep": "Spot it first. Three things on this dashboard are wrong.",
+  "availabilityRef": "availability",
+  "demoRef": "demo",
+  "claims": [
+   "CL-70",
+   "CL-80",
+   "CL-81"
+  ]
+ },
+ "availability": {
+  "lines": [
+   {
+    "id": "AV-1",
+    "text": "Open to full-time remote front-end roles.",
+    "claims": [
+     "CL-73"
+    ]
+   },
+   {
+    "id": "AV-2",
+    "text": "Also open to freelance projects.",
+    "claims": [
+     "CL-74"
+    ]
+   },
+   {
+    "id": "AV-3",
+    "text": "Flexible with working hours.",
+    "claims": [
+     "CL-75"
+    ]
+   }
+  ],
+  "joined": "Open to full-time remote front-end roles. Also open to freelance projects. Flexible with working hours.",
+  "av4": {
+   "text": "Start date and terms are agreed in conversation.",
+   "include": false
+  }
+ },
+ "demo": {
+  "regionLabel": "Finishing demo: one dashboard in three states",
+  "dashboardTitle": "Support and sign-ups",
+  "controls": {
+   "check": "Check it against the source",
+   "design": "Now design it",
+   "back": "Back to Generated",
+   "reset": "Start over",
+   "scrubberLabel": "Dashboard state",
+   "scrubberHint": "Drag to compare. Arrow keys work too.",
+   "stateNames": {
+    "generated": "Generated",
+    "checked": "Checked",
+    "designed": "Designed"
+   }
+  },
+  "states": {
+   "generated": {
+    "label": "Generated",
+    "caption": "Looks finished. Nothing on it is flagged.",
+    "announce": "Generated. The dashboard shows {membersShown} members, an empty chart, and a Resolved card reading {resolvedShown}."
+   },
+   "checked": {
+    "label": "Checked",
+    "caption": "A blank chart isn't an empty chart.",
+    "captionSub": "It read a key the source never sends.",
+    "announce": "Checked. Members reads {membersHeld}. The chart draws {seriesCount} points. The card labelled Closed reads {closedHeld}.",
+    "claims": [
+     "CL-03",
+     "CL-82"
+    ],
+    "gloss": "Empty means the source returned nothing. Blank means the chart never looked."
+   },
+   "designed": {
+    "label": "Designed",
+    "caption": "Same numbers. Now someone has decided what matters.",
+    "announce": "Designed. The same numbers, reordered by importance, with designed empty, loading and error states.",
+    "claims": [
+     "CL-01"
+    ]
+   }
+  },
+  "dashboardLabels": {
+   "members": "Active members",
+   "openTickets": "Open tickets",
+   "resolvedTickets": "Resolved tickets",
+   "closedTickets": "Closed tickets",
+   "chart": "Sign-ups by week",
+   "chartAltGenerated": "Chart: Sign-ups by week. Nothing is drawn.",
+   "chartAltChecked": "Chart: Sign-ups by week. {seriesCount} points, from {seriesMin} to {seriesMax}.",
+   "chartAltDesigned": "Chart: Sign-ups by week. {seriesCount} points, from {seriesMin} to {seriesMax}. The last week is {seriesLast}."
+  },
+  "defects": [
+   {
+    "id": "DD-1",
+    "name": "Silent zero",
+    "readout": "Shows {membersShown}. The source holds {membersHeld}.",
+    "explain": "The card reads a field the source never sends. The default turns the gap into a 0.",
+    "heldPlain": "{membersHeld}",
+    "claims": [
+     "CL-03"
+    ]
+   },
+   {
+    "id": "DD-2",
+    "name": "Blank chart",
+    "caption": "A blank chart isn't an empty chart.",
+    "readout": "Draws {seriesShown} points. The source holds {seriesCount}.",
+    "explain": "The chart reads keys the source never sends, so it draws nothing and says nothing.",
+    "claims": [
+     "CL-03"
+    ]
+   },
+   {
+    "id": "DD-3",
+    "name": "Wrong label",
+    "caption": "Labelled Resolved. Showing Closed.",
+    "readout": "Shows {resolvedShown}. The source's Resolved is {resolvedHeld}.",
+    "explain": "Two fields, two values. The label names one and the card shows the other.",
+    "claims": [
+     "CL-03"
+    ]
+   }
+  ],
+  "fixture": {
+   "source": {
+    "activeMembers": 412,
+    "tickets": {
+     "open": 23,
+     "resolved": 47,
+     "closed": 61
+    },
+    "signupsByWeek": [
+     18,
+     22,
+     25,
+     31,
+     29,
+     35,
+     38,
+     41,
+     37,
+     44
+    ]
+   },
+   "generatedReads": {
+    "membersShown": 0,
+    "resolvedShown": 61,
+    "seriesShown": 0
+   }
+  },
+  "designedNotes": [
+   {
+    "id": "order",
+    "label": "Order",
+    "text": "The number leads. The label follows it."
+   },
+   {
+    "id": "space",
+    "label": "Spacing",
+    "text": "One rhythm. Related things sit together."
+   },
+   {
+    "id": "colour",
+    "label": "Colour",
+    "text": "One signal means the figure matches the source."
+   },
+   {
+    "id": "motion",
+    "label": "Motion",
+    "text": "It runs to show what changed. It stops when your device asks for less motion."
+   },
+   {
+    "id": "states",
+    "label": "States",
+    "text": "Empty, loading and error each have their own design."
+   },
+   {
+    "id": "focus",
+    "label": "Focus",
+    "text": "Every control shows where you are."
+   }
+  ],
+  "credit": {
+   "owner": "Recreated from defects I found on a real project. Sample data.",
+   "directed": "Recreated defect types. Sample data.",
+   "claims": [
+    "CL-02",
+    "CL-04"
+   ]
+  },
+  "designCredit": {
+   "owner": "Design direction: mine. Drafted with AI tools.",
+   "directed": "Designed with AI tools; reviewed by me.",
+   "claims": [
+    "CL-06"
+   ]
+  },
+  "noJs": {
+   "title": "This demo needs JavaScript.",
+   "body": "Here is what it shows. The Generated dashboard has a Members card reading 0 where the source holds 412, a chart that draws nothing, and a Resolved card showing the Closed figure. The Checked dashboard fixes all three. The Designed dashboard is the one below, with the same numbers."
+  },
+  "reducedMotion": "Your device asks for less motion. The states switch without animation.",
+  "claims": [
+   "CL-01",
+   "CL-02",
+   "CL-03",
+   "CL-04",
+   "CL-05",
+   "CL-06"
+  ]
+ },
+ "bridge": {
+  "heading": "That was a recreation.",
+  "body": "The numbers were samples. The three defects are kinds I look for. Below is where you can check the real thing.",
+  "claims": [
+   "CL-02"
+  ]
+ },
+ "receiptsLegend": {
+  "heading": "Check it yourself",
+  "lead": "Every claim on this page carries one of three tags.",
+  "tags": {
+   "check": {
+    "label": "Check it yourself",
+    "gloss": "A public file, pinned to a commit.",
+    "accessibleName": "Tag: Check it yourself. A public file, pinned to a commit."
+   },
+   "shown": {
+    "label": "Shown",
+    "gloss": "A case study on this page, on sample data.",
+    "accessibleName": "Tag: Shown. A case study on this page, on sample data."
+   },
+   "word": {
+    "label": "My word",
+    "gloss": "Nothing public backs this. Weigh it as you would a reference.",
+    "accessibleName": "Tag: My word. Nothing public backs this. Weigh it as you would a reference."
+   }
+  },
+  "filter": {
+   "label": "Show claims by tag",
+   "all": "All",
+   "resultCount": "{n} claims",
+   "empty": "Nothing carries this tag yet. That's an answer, not a blank."
+  }
+ },
+ "receipts": [
+  {
+   "id": "R-1",
+   "title": "One door between the screens and the data.",
+   "text": "In my public command-center repository, everything the interface shows or does goes through one interface. It has a fixtures version and an API version.",
+   "linkLabel": "src/lib/data/types.ts",
+   "claims": [
+    "CL-07"
+   ]
+  },
+  {
+   "id": "R-2",
+   "title": "It hides what the back end can't do.",
+   "text": "A set of capability flags decides what is offered. The interface hides an action the back end can't do, instead of showing a button that fails.",
+   "linkLabel": "src/lib/data/types.ts",
+   "claims": [
+    "CL-08"
+   ]
+  },
+  {
+   "id": "R-3",
+   "title": "A check stops a second list of departments.",
+   "text": "A script, run in the repository's CI workflow, fails the check when department codes are copied outside the fixtures.",
+   "linkLabel": "scripts/check-domain-lists.mjs",
+   "claims": [
+    "CL-09"
+   ]
+  },
+  {
+   "id": "R-4",
+   "title": "Some tests need no browser and no back end.",
+   "text": "They include a contrast-ratio check.",
+   "linkLabel": "e2e/design-logic.spec.ts",
+   "claims": [
+    "CL-10"
+   ]
+  },
+  {
+   "id": "R-5",
+   "title": "An audit of every screen at phone widths.",
+   "text": "It includes a check for horizontal scroll. You can read it. I haven't run it for you.",
+   "linkLabel": "phone-width audit",
+   "claims": [
+    "CL-11"
+   ]
+  },
+  {
+   "id": "R-6",
+   "title": "A README that says what isn't done.",
+   "text": "My demo ordering site lists what it lacks: no real payments, orders that reset on restart, no automated tests.",
+   "linkLabel": "PizzaPoint README",
+   "claims": [
+    "CL-12"
+   ]
+  },
+  {
+   "id": "R-7",
+   "title": "The tools are in the commit history.",
+   "text": "The command-center repository's commit message names the AI tools that worked on it.",
+   "linkLabel": "The commit",
+   "claims": [
+    "CL-14"
+   ]
+  }
+ ],
+ "work": {
+  "heading": "Work",
+  "lead": "Each piece says what looked finished, what wasn't, and what it needed.",
+  "labels": {
+   "role": "My role",
+   "looked": "Looked finished",
+   "wasnt": "It wasn't",
+   "did": "What I did",
+   "needed": "What it needed",
+   "limit": "Limit",
+   "stack": "Stack",
+   "screens": "Screens"
+  },
+  "order": [
+   "arsididi-admin",
+   "arsididi-student",
+   "command-center",
+   "cake-studio",
+   "payments-webhooks"
+  ],
+  "shortEntry": "pizzapoint"
+ },
+ "caseStudies": [
+  {
+   "id": "arsididi-admin",
+   "slug": "arsididi-admin",
+   "status": "ready_for_owner_review",
+   "claims": [
+    "CL-20",
+    "CL-21",
+    "CL-22",
+    "CL-26",
+    "CL-28",
+    "CL-30",
+    "CL-31",
+    "CL-32",
+    "CL-33",
+    "CL-34",
+    "CL-38"
+   ],
+   "kicker": {
+    "named": "ARSIDIDI · admin dashboard",
+    "unnamed": "An exam-preparation platform · admin dashboard"
+   },
+   "title": {
+    "named": "ARSIDIDI admin dashboard",
+    "unnamed": "An exam-preparation platform's admin dashboard"
+   },
+   "role": {
+    "named": {
+     "text": "My role: the front end of the admin dashboard of ARSIDIDI, an exam-preparation platform.",
+     "claims": [
+      "CL-21"
+     ]
+    },
+    "unnamed": {
+     "text": "My role: the front end of the admin dashboard of an exam-preparation platform.",
+     "claims": [
+      "CL-20"
+     ]
+    }
+   },
+   "intro": "A dashboard is a thing people act on. So the first question about any card on it is where its number comes from.",
+   "lookedFinished": {
+    "text": "Cards, two trend charts and a leaderboard. Every one of them rendered.",
+    "claims": [
+     "CL-30"
+    ]
+   },
+   "itWasnt": [
+    {
+     "text": "A card read a field the endpoint never sends. It showed 0.",
+     "claims": [
+      "CL-30"
+     ]
+    },
+    {
+     "text": "Both trend charts read keys that weren't in the response. They drew empty frames and raised no error.",
+     "claims": [
+      "CL-31"
+     ]
+    },
+    {
+     "text": "A card labelled Resolved showed the Closed figure. The endpoint holds both.",
+     "claims": [
+      "CL-32"
+     ]
+    },
+    {
+     "text": "A failed request fell back to 0. An outage looked like a quiet day.",
+     "claims": [
+      "CL-33"
+     ]
+    }
+   ],
+   "whatIDid": {
+    "owner": [
+     {
+      "text": "I compared each card with the response body, field by field.",
+      "claims": [
+       "CL-38"
+      ]
+     },
+     {
+      "text": "I changed what the card reads. I did not change the number it shows.",
+      "claims": [
+       "CL-30"
+      ]
+     },
+     {
+      "text": "I gave failure its own state, with a retry, so a failure can't pass as a zero.",
+      "claims": [
+       "CL-33"
+      ]
+     },
+     {
+      "text": "When a session expired and several requests failed at once, each tried to refresh it. I made them share one refresh and retry in turn.",
+      "claims": [
+       "CL-34"
+      ]
+     }
+    ],
+    "directed": [
+     {
+      "text": "I directed a comparison of each card with the response body, field by field.",
+      "claims": [
+       "CL-38"
+      ]
+     },
+     {
+      "text": "The fix changed what the card reads. It did not change the number it shows.",
+      "claims": [
+       "CL-30"
+      ]
+     },
+     {
+      "text": "Failure got its own state, with a retry, so a failure can't pass as a zero.",
+      "claims": [
+       "CL-33"
+      ]
+     },
+     {
+      "text": "When a session expired and several requests failed at once, each tried to refresh it. They share one refresh and retry in turn.",
+      "claims": [
+       "CL-34"
+      ]
+     }
+    ]
+   },
+   "whatItNeeded": {
+    "text": "A card is finished when it shows the number the source sends, or says it has none. A chart is finished when an empty array and a wrong key look different. A failure is finished when nobody can mistake it for a zero.",
+    "claims": [
+     "CL-30",
+     "CL-31",
+     "CL-33"
+    ]
+   },
+   "stack": {
+    "text": "React, Vite, Tailwind, TanStack Query, React Router, Radix UI, Framer Motion, Recharts and axios.",
+    "claims": [
+     "CL-22"
+    ]
+   },
+   "screens": {
+    "text": "Question bank and groups, bulk import and import history, assets, catalog, answer reviews, custom exams, learning resources, users, roles and permissions, plans and transactions, support tickets, audit logs, and the dashboard.",
+    "claims": [
+     "CL-26"
+    ]
+   },
+   "tests": {
+    "text": "The repository includes automated tests.",
+    "claims": [
+     "CL-28"
+    ]
+   },
+   "limit": {
+    "status": "draft_pending_owner",
+    "text": null,
+    "claims": []
+   }
+  },
+  {
+   "id": "arsididi-student",
+   "slug": "arsididi-student",
+   "status": "ready_for_owner_review",
+   "claims": [
+    "CL-20",
+    "CL-21",
+    "CL-23",
+    "CL-24",
+    "CL-25",
+    "CL-27",
+    "CL-28",
+    "CL-35",
+    "CL-36",
+    "CL-37",
+    "CL-38"
+   ],
+   "kicker": {
+    "named": "ARSIDIDI · student web app",
+    "unnamed": "An exam-preparation platform · student web app"
+   },
+   "title": {
+    "named": "ARSIDIDI student web app",
+    "unnamed": "An exam-preparation platform's student web app"
+   },
+   "role": {
+    "named": {
+     "text": "My role: the front end of the student web app. The same platform as the admin dashboard, a different application.",
+     "claims": [
+      "CL-21"
+     ]
+    },
+    "unnamed": {
+     "text": "My role: the front end of the student web app. The same platform as the admin dashboard, a different application.",
+     "claims": [
+      "CL-20"
+     ]
+    }
+   },
+   "intro": "Lists and filters fail quietly. Nothing breaks. Something just isn't there.",
+   "lookedFinished": {
+    "text": "A home page with questions and answers, a filter bar with tabs, and a notification list.",
+    "claims": [
+     "CL-35"
+    ]
+   },
+   "itWasnt": [
+    {
+     "text": "The FAQ read the wrong level of the response. It got an empty list, dropped every real question and showed local placeholders instead.",
+     "claims": [
+      "CL-35"
+     ]
+    },
+    {
+     "text": "A filter bar had one tab. The subjects behind it were hard-coded to an empty list, so nothing beyond All could appear.",
+     "claims": [
+      "CL-36"
+     ]
+    },
+    {
+     "text": "Every notification read as unread, dated Invalid Date. The code read camelCase fields from a response that sends snake_case.",
+     "claims": [
+      "CL-37"
+     ]
+    }
+   ],
+   "whatIDid": {
+    "owner": [
+     {
+      "text": "I read the real response for each list and matched the keys.",
+      "claims": [
+       "CL-38"
+      ]
+     },
+     {
+      "text": "I wired the filter to the data it was meant to filter.",
+      "claims": [
+       "CL-36"
+      ]
+     },
+     {
+      "text": "I put one mapper between the response and the screen, so one place translates what arrives into what the screen needs.",
+      "claims": [
+       "CL-37"
+      ]
+     }
+    ],
+    "directed": [
+     {
+      "text": "I directed a read of the real response for each list, and a match of the keys.",
+      "claims": [
+       "CL-38"
+      ]
+     },
+     {
+      "text": "The filter reads the data it was meant to filter.",
+      "claims": [
+       "CL-36"
+      ]
+     },
+     {
+      "text": "One mapper sits between the response and the screen, so one place translates what arrives into what the screen needs.",
+      "claims": [
+       "CL-37"
+      ]
+     }
+    ]
+   },
+   "whatItNeeded": {
+    "text": "A filter is finished when choosing a tab changes what you see. A list is finished when a missing key is an error, not an empty list.",
+    "claims": [
+     "CL-35",
+     "CL-36"
+    ]
+   },
+   "pwa": {
+    "text": "It installs as an app, and its shell works offline. It never caches API responses, so a stale figure can't stand in for a current one. It asks before it applies an update.",
+    "claims": [
+     "CL-24",
+     "CL-25"
+    ]
+   },
+   "stack": {
+    "text": "React, Vite, Tailwind, TanStack Query, React Router, React Hook Form with Zod, KaTeX for mathematics, Radix UI and Framer Motion.",
+    "claims": [
+     "CL-23"
+    ]
+   },
+   "screens": {
+    "text": "Practice, exam mode, custom exams, questions with mathematics, activity history, community, support and settings.",
+    "claims": [
+     "CL-27"
+    ]
+   },
+   "tests": {
+    "text": "The repository includes automated tests.",
+    "claims": [
+     "CL-28"
+    ]
+   },
+   "limit": {
+    "status": "draft_pending_owner",
+    "text": null,
+    "claims": []
+   }
+  },
+  {
+   "id": "command-center",
+   "slug": "command-center",
+   "status": "ready_for_owner_review",
+   "claims": [
+    "CL-07",
+    "CL-08",
+    "CL-09",
+    "CL-10",
+    "CL-11",
+    "CL-14",
+    "CL-15",
+    "CL-16",
+    "CL-60"
+   ],
+   "kicker": {
+    "named": "Public repository",
+    "unnamed": "Public repository"
+   },
+   "title": {
+    "named": "A command center that hides what the back end can't do",
+    "unnamed": "A command center that hides what the back end can't do"
+   },
+   "role": {
+    "named": {
+     "text": "My role: I directed it and reviewed it with AI tools. The commit message names them.",
+     "claims": [
+      "CL-60",
+      "CL-14"
+     ]
+    },
+    "unnamed": {
+     "text": "My role: I directed it and reviewed it with AI tools. The commit message names them.",
+     "claims": [
+      "CL-60",
+      "CL-14"
+     ]
+    }
+   },
+   "intro": "The front end of an agency where a human governs AI-run work. The repository is public, so you can read all of it.",
+   "lookedFinished": {
+    "text": "An office of rooms, each with its own controls. A control looks the same whether the back end can serve it or not.",
+    "claims": [
+     "CL-08"
+    ]
+   },
+   "itWasnt": [
+    {
+     "text": "A control can ask for something the back end can't do. Nothing on the screen says so until the click.",
+     "claims": [
+      "CL-08"
+     ]
+    }
+   ],
+   "whatIDid": {
+    "owner": [
+     {
+      "text": "The screens reach data through one interface. It has a fixtures version for development and an API version for the real back end.",
+      "claims": [
+       "CL-07"
+      ]
+     },
+     {
+      "text": "The interface carries capability flags. A control the back end can't serve isn't drawn.",
+      "claims": [
+       "CL-08"
+      ]
+     },
+     {
+      "text": "A check in CI fails when department codes are copied outside the fixtures.",
+      "claims": [
+       "CL-09"
+      ]
+     }
+    ],
+    "directed": [
+     {
+      "text": "The screens reach data through one interface. It has a fixtures version for development and an API version for the real back end.",
+      "claims": [
+       "CL-07"
+      ]
+     },
+     {
+      "text": "The interface carries capability flags. A control the back end can't serve isn't drawn.",
+      "claims": [
+       "CL-08"
+      ]
+     },
+     {
+      "text": "A check in CI fails when department codes are copied outside the fixtures.",
+      "claims": [
+       "CL-09"
+      ]
+     }
+    ]
+   },
+   "whatItNeeded": {
+    "text": "A control is finished when the back end can do what it asks, or when the control isn't there.",
+    "claims": [
+     "CL-08"
+    ]
+   },
+   "checkable": {
+    "text": "Every file named in Check it yourself above is in this repository. Some of its tests need no browser and no back end. One audits every screen at phone widths.",
+    "claims": [
+     "CL-10",
+     "CL-11"
+    ]
+   },
+   "stack": {
+    "text": "Next.js, React, Tailwind, TanStack Query and Playwright.",
+    "claims": [
+     "CL-77"
+    ]
+   },
+   "limit": {
+    "status": "draft_pending_owner",
+    "text": null,
+    "claims": []
+   }
+  },
+  {
+   "id": "cake-studio",
+   "slug": "cake-studio",
+   "status": "ready_for_owner_review_unnamed_only",
+   "claims": [
+    "CL-44",
+    "CL-45",
+    "CL-46",
+    "CL-47",
+    "CL-48"
+   ],
+   "kicker": {
+    "named": "A Lagos cake studio · storefront",
+    "unnamed": "A Lagos cake studio · storefront"
+   },
+   "title": {
+    "named": "A Lagos cake studio's storefront",
+    "unnamed": "A Lagos cake studio's storefront"
+   },
+   "role": {
+    "named": {
+     "text": "My role: the storefront's interface. Built with AI tools, directed and reviewed by me.",
+     "claims": [
+      "CL-44"
+     ]
+    },
+    "unnamed": {
+     "text": "My role: the storefront's interface. Built with AI tools, directed and reviewed by me.",
+     "claims": [
+      "CL-44"
+     ]
+    }
+   },
+   "intro": "A green build is a statement about the code. It isn't a statement about the page.",
+   "lookedFinished": {
+    "text": "The build passed. The type check passed. The accessibility tree showed no errors.",
+    "claims": [
+     "CL-45"
+    ]
+   },
+   "itWasnt": [
+    {
+     "text": "The page had no accent colour.",
+     "claims": [
+      "CL-45"
+     ]
+    },
+    {
+     "text": "A class syntax from the old framework version compiled to nothing in the new one. The main button rendered as bare text with no fill.",
+     "claims": [
+      "CL-46"
+     ]
+    },
+    {
+     "text": "Queried directly, the colour token resolved. On the screen, nothing used it.",
+     "claims": [
+      "CL-46"
+     ]
+    },
+    {
+     "text": "A second bug sat behind a passing test. The cake that changes shape as you choose was adding and removing shapes instead of changing them.",
+     "claims": [
+      "CL-47"
+     ]
+    },
+    {
+     "text": "A shape that didn't exist last frame can't animate.",
+     "claims": [
+      "CL-47"
+     ]
+    }
+   ],
+   "whatIDid": {
+    "owner": [
+     {
+      "text": "I looked at the page on an emulated mid-range phone and saw the button had no fill.",
+      "claims": [
+       "CL-46"
+      ]
+     },
+     {
+      "text": "I changed every use to the form both versions understand. Then I looked again.",
+      "claims": [
+       "CL-46"
+      ]
+     },
+     {
+      "text": "I rewrote the cake so the page keeps the same shapes and transforms them.",
+      "claims": [
+       "CL-47"
+      ]
+     }
+    ],
+    "directed": [
+     {
+      "text": "The audit records that the missing fill was caught by looking at the page on an emulated mid-range phone.",
+      "claims": [
+       "CL-46"
+      ]
+     },
+     {
+      "text": "Every use was changed to the form both versions understand, and the page was looked at again.",
+      "claims": [
+       "CL-46"
+      ]
+     },
+     {
+      "text": "The cake was rewritten so the page keeps the same shapes and transforms them.",
+      "claims": [
+       "CL-47"
+      ]
+     }
+    ]
+   },
+   "whatItNeeded": {
+    "text": "A green build and an accessibility tree with no errors say the code is well formed. They don't say the page looks right. Someone has to look at it, on a device.",
+    "claims": [
+     "CL-46"
+    ]
+   },
+   "stack": null,
+   "limit": {
+    "status": "draft_pending_owner",
+    "text": null,
+    "claims": []
+   }
+  },
+  {
+   "id": "payments-webhooks",
+   "slug": "payments-webhooks",
+   "status": "ready_for_owner_review_consent_needed",
+   "claims": [
+    "CL-50",
+    "CL-51",
+    "CL-52",
+    "CL-53",
+    "CL-54",
+    "CL-55",
+    "CL-56"
+   ],
+   "kicker": {
+    "named": "A deposit tool for Nigerian small businesses",
+    "unnamed": "A deposit tool for Nigerian small businesses"
+   },
+   "title": {
+    "named": "When the screen says paid",
+    "unnamed": "When the screen says paid"
+   },
+   "role": {
+    "named": {
+     "text": "Not a front-end project. I include it because a screen that says paid has to trust something. I directed it and reviewed it with an AI assistant.",
+     "claims": [
+      "CL-50"
+     ]
+    },
+    "unnamed": {
+     "text": "Not a front-end project. I include it because a screen that says paid has to trust something. I directed it and reviewed it with an AI assistant.",
+     "claims": [
+      "CL-50"
+     ]
+    }
+   },
+   "intro": "A tool for small businesses that take a deposit before they start: log a booking, create a payment link, track the status.",
+   "lookedFinished": {
+    "text": "A booking page that says Deposit paid. A total that adds up.",
+    "claims": [
+     "CL-51",
+     "CL-53"
+    ]
+   },
+   "itWasnt": [
+    {
+     "text": "A status is as good as whatever can change it. Anyone who can reach the webhook address can post a payment event.",
+     "claims": [
+      "CL-51"
+     ]
+    },
+    {
+     "text": "A total held as decimal naira picks up fractions of a kobo.",
+     "claims": [
+      "CL-53"
+     ]
+    }
+   ],
+   "whatIDid": {
+    "owner": [
+     {
+      "text": "A booking can't change to Deposit paid unless the payment provider's signature matches the body. The comparison runs in constant time.",
+      "claims": [
+       "CL-51"
+      ]
+     },
+     {
+      "text": "With no key configured, it refuses every event.",
+      "claims": [
+       "CL-51"
+      ]
+     },
+     {
+      "text": "A replayed event changes nothing. The update fires once, while the booking is still awaiting its deposit.",
+      "claims": [
+       "CL-52"
+      ]
+     },
+     {
+      "text": "If the write fails, it answers 500 so the provider retries.",
+      "claims": [
+       "CL-52"
+      ]
+     },
+     {
+      "text": "Money is stored as integer kobo and formatted when a person reads it.",
+      "claims": [
+       "CL-53"
+      ]
+     }
+    ],
+    "directed": [
+     {
+      "text": "A booking can't change to Deposit paid unless the payment provider's signature matches the body. The comparison runs in constant time.",
+      "claims": [
+       "CL-51"
+      ]
+     },
+     {
+      "text": "With no key configured, it refuses every event.",
+      "claims": [
+       "CL-51"
+      ]
+     },
+     {
+      "text": "A replayed event changes nothing. The update fires once, while the booking is still awaiting its deposit.",
+      "claims": [
+       "CL-52"
+      ]
+     },
+     {
+      "text": "If the write fails, it answers 500 so the provider retries.",
+      "claims": [
+       "CL-52"
+      ]
+     },
+     {
+      "text": "Money is stored as integer kobo and formatted when a person reads it.",
+      "claims": [
+       "CL-53"
+      ]
+     }
+    ]
+   },
+   "whatItNeeded": {
+    "text": "A status is finished when one thing can change it: a signed event. Money is finished when it is a whole number until someone reads it.",
+    "claims": [
+     "CL-51",
+     "CL-53"
+    ]
+   },
+   "tests": {
+    "text": "Its tests cover a correct signature, a wrong one, a tampered body, a missing header, a missing key and a replayed event.",
+    "claims": [
+     "CL-54"
+    ]
+   },
+   "limit": {
+    "status": "draft_pending_owner",
+    "text": null,
+    "claims": []
+   },
+   "introClaims": [
+    "CL-55"
+   ]
+  }
+ ],
+ "shortEntries": [
+  {
+   "id": "pizzapoint",
+   "title": "PizzaPoint",
+   "text": "A demo ordering site. Its README has a section called \"What's genuinely not done\". The server decides what each item costs. The browser never does. Built with an AI assistant, and the commit history shows it.",
+   "linkLabel": "PizzaPoint on GitHub",
+   "claims": [
+    "CL-12",
+    "CL-13",
+    "CL-78"
+   ],
+   "status": "ready_for_owner_review"
+  }
+ ],
+ "howIWork": {
+  "heading": "How I work",
+  "items": [
+   {
+    "id": "check",
+    "title": "I check against the source.",
+    "text": {
+     "owner": "Before I trust a screen, I open the response. I compare the keys the component reads with the keys that arrive, and each label with its field. Then I run the screen.",
+     "directed": "Before I trust a screen, I have it checked against the response: the keys it reads against the keys that arrive, each label against its field. Then I read the result and decide what stays."
+    },
+    "claims": [
+     "CL-38"
+    ]
+   },
+   {
+    "id": "spec",
+    "title": "I write the spec down.",
+    "text": "I write down what a screen must do and what it must never do, before it is built. A rule that is written down can be checked.",
+    "claims": [
+     "CL-39"
+    ]
+   },
+   {
+    "id": "audit",
+    "title": "I audit, and I list what I didn't check.",
+    "text": "Each claim in an audit is marked checked, partly checked or not checked. The list of what I didn't check goes in the same file.",
+    "claims": [
+     "CL-40",
+     "CL-12"
+    ]
+   },
+   {
+    "id": "states",
+    "title": "I design the empty, loading and error states.",
+    "text": "The full state is the easy one. The dashboard above gives the other three their own design, and so does this page.",
+    "claims": [
+     "CL-41",
+     "CL-01"
+    ]
+   }
+  ]
+ },
+ "aiAuthorship": {
+  "A": {
+   "about": "I use AI tools to build interfaces. I direct the work and I review it, and I check what comes back against the source.",
+   "footer": "How this was made: with AI tools, directed and reviewed by me.",
+   "claims": [
+    "CL-71",
+    "CL-72"
+   ]
+  },
+  "B": {
+   "about": "AI tools did much of the drafting. What I do is direct the checking: I read what they produce against the source and decide what stays.",
+   "footer": "How this was made: AI tools did much of the drafting. I direct the checking.",
+   "claims": [
+    "CL-71",
+    "CL-72"
+   ]
+  },
+  "C": {
+   "about": "AI tools are part of how this page and my projects were made. This page shows the standard I hold their output to.",
+   "footer": "How this was made: AI tools are part of how this page was made.",
+   "claims": [
+    "CL-71"
+   ]
+  }
+ },
+ "about": {
+  "heading": "About",
+  "paragraphs": [
+   {
+    "text": "AI tools can draw a plausible dashboard in minutes. Somebody still has to find out whether it's right. I'm a front-end engineer in Nigeria, and I'm the somebody.",
+    "claims": [
+     "CL-76",
+     "CL-70"
+    ]
+   },
+   {
+    "ref": "aiAuthorship.about"
+   },
+   {
+    "text": {
+     "named": "My role: the front end of the admin dashboard and the student web app of ARSIDIDI, an exam-preparation platform. Two applications, one platform. The back end and the rest of the platform are other people's work.",
+     "unnamed": "My role: the front end of the admin dashboard and the student web app of an exam-preparation platform. Two applications, one platform. The back end and the rest of the platform are other people's work."
+    },
+    "claims": [
+     "CL-20",
+     "CL-21"
+    ]
+   }
+  ],
+  "portrait": {
+   "caption": "Mobolaji.",
+   "alt": "Portrait of Mobolaji."
+  }
+ },
+ "contact": {
+  "heading": "Write to me",
+  "lead": "Open to full-time remote front-end roles, and also to freelance projects. Flexible with working hours.",
+  "leadClaims": [
+   "CL-73",
+   "CL-74",
+   "CL-75"
+  ],
+  "freelanceDoor": {
+   "line": "It demos well. That's the problem. Have an interface built fast, with or without AI, that now has to be right? I'm open to freelance projects.",
+   "scope": "Dashboards, storefronts and tools people act on. The front end.",
+   "claims": [
+    "CL-74"
+   ]
+  },
+  "button": "Write to me",
+  "buttonAccessibleName": "Write to me by email",
+  "email": {
+   "href": "mailto:mobolajiola22@gmail.com",
+   "address": "mobolajiola22@gmail.com"
+  },
+  "doors": [
+   {
+    "id": "role",
+    "label": "About a role",
+    "subject": "A front-end role"
+   },
+   {
+    "id": "project",
+    "label": "About a project",
+    "subject": "A freelance project"
+   }
+  ],
+  "helper": "Role or project: say which.",
+  "profiles": [
+   {
+    "id": "github",
+    "label": "GitHub",
+    "href": "https://github.com/mobolaji22",
+    "accessibleName": "GitHub profile, opens in a new tab"
+   },
+   {
+    "id": "linkedin",
+    "label": "LinkedIn",
+    "href": "https://www.linkedin.com/in/mobolaji-ola-313295317/",
+    "accessibleName": "LinkedIn profile, opens in a new tab"
+   }
+  ],
+  "resume": {
+   "value": null
+  }
+ },
+ "footer": {
+  "tagsNoteLink": "#check-it-yourself",
+  "accessibility": "If something here doesn't work with your device or assistive technology, write to me.",
+  "copyright": "© {year} Mobolaji",
+  "links": [
+   "github",
+   "linkedin",
+   "contact"
+  ],
+  "claims": [
+   "CL-71",
+   "CL-72"
+  ]
+ },
+ "notFound": {
+  "title": "No such page.",
+  "body": "Nothing here is pretending otherwise.",
+  "link": "Back to the demo",
+  "metaTitle": "No such page | Mobolaji",
+  "robots": "noindex"
+ },
+ "states": {
+  "empty": "Nothing returned. That's the source's answer, not a blank.",
+  "loading": "Checking.",
+  "error": "That didn't load. This is an error, not a zero.",
+  "notMeasured": "Not measured.",
+  "notChecked": "Not checked.",
+  "noScript": "This page works without JavaScript, except the demo. The demo's text version is below it.",
+  "externalLinkSuffix": "(opens in a new tab)"
+ },
+ "a11y": {
+  "dashboard": {
+   "role": "group",
+   "name": "Sample dashboard: Support and sign-ups"
+  },
+  "cardAnnouncement": "{label}: {value}",
+  "scrubber": {
+   "role": "slider",
+   "name": "Dashboard state",
+   "valueText": "{stateName}, {n} of 3"
+  },
+  "tagChip": "Tag: {tag}. {gloss}",
+  "portraitAlt": "Portrait of Mobolaji.",
+  "decorative": "Decorative marks, dividers and the MO mark's shape are aria-hidden; the mark's link has the name 'Mobolaji, home'.",
+  "headings": "One h1 (the headline). Section headings are h2. Case-study stages (Looked finished, It wasn't, What I did, What it needed) are h3. Sentence case throughout.",
+  "linkText": "Links name their target ('src/lib/data/types.ts', 'PizzaPoint README'). Never 'click here' or 'read more'. External links add the suffix (opens in a new tab).",
+  "bar": "WCAG 2.2 AA is the build's quality bar, not a claim on the page (D-12)."
+ },
+ "claims": [
+  {
+   "id": "CL-01",
+   "tag": "Shown",
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-02",
+   "tag": "Shown",
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-03",
+   "tag": "Shown",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-04",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-05",
+   "tag": "Check it yourself",
+   "shippable": "blocked",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-06",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-07",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/blob/df47b5e890f7ef7990292659c280049154121d1e/src/lib/data/types.ts"
+  },
+  {
+   "id": "CL-08",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/blob/df47b5e890f7ef7990292659c280049154121d1e/src/lib/data/types.ts"
+  },
+  {
+   "id": "CL-09",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/blob/df47b5e890f7ef7990292659c280049154121d1e/scripts/check-domain-lists.mjs"
+  },
+  {
+   "id": "CL-10",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/blob/df47b5e890f7ef7990292659c280049154121d1e/e2e/design-logic.spec.ts"
+  },
+  {
+   "id": "CL-11",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/blob/df47b5e890f7ef7990292659c280049154121d1e/e2e/zzzzzzzzzzzzzz-phone.spec.ts"
+  },
+  {
+   "id": "CL-12",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/pizzapoint/blob/0abcf36072969ee4712b7b91a452d41794ea7550/README.md"
+  },
+  {
+   "id": "CL-13",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/pizzapoint/blob/0abcf36072969ee4712b7b91a452d41794ea7550/lib/data/store.ts"
+  },
+  {
+   "id": "CL-14",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/commit/df47b5e890f7ef7990292659c280049154121d1e"
+  },
+  {
+   "id": "CL-15",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/blob/df47b5e890f7ef7990292659c280049154121d1e/src/lib/design/proposals.ts"
+  },
+  {
+   "id": "CL-16",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-20",
+   "tag": "My word",
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-21",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-22",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-23",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-24",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-25",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-26",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-27",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-28",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-30",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-31",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-32",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-33",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-34",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-35",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-36",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-37",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-38",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-39",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-40",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-41",
+   "tag": "Shown",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-44",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-45",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-46",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-47",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-48",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-50",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-51",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null,
+   "tagUpgrade": "Shown"
+  },
+  {
+   "id": "CL-52",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null,
+   "tagUpgrade": "Shown"
+  },
+  {
+   "id": "CL-53",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null,
+   "tagUpgrade": "Shown"
+  },
+  {
+   "id": "CL-54",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null,
+   "tagUpgrade": "Shown"
+  },
+  {
+   "id": "CL-55",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null,
+   "tagUpgrade": "Shown"
+  },
+  {
+   "id": "CL-56",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null,
+   "tagUpgrade": "Shown"
+  },
+  {
+   "id": "CL-57",
+   "tag": "Shown",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-58",
+   "tag": "Shown",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-60",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-70",
+   "tag": "My word",
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-71",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/commit/df47b5e890f7ef7990292659c280049154121d1e"
+  },
+  {
+   "id": "CL-72",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-73",
+   "tag": "My word",
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-74",
+   "tag": "My word",
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-75",
+   "tag": "My word",
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-76",
+   "tag": "My word",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-77",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/ceo-command-center-preview/blob/df47b5e890f7ef7990292659c280049154121d1e/package.json"
+  },
+  {
+   "id": "CL-78",
+   "tag": "Check it yourself",
+   "shippable": "shippable_with_approval",
+   "evidenceUrl": "https://github.com/mobolaji22/pizzapoint/commit/0abcf36072969ee4712b7b91a452d41794ea7550"
+  },
+  {
+   "id": "CL-80",
+   "tag": null,
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-81",
+   "tag": null,
+   "shippable": "shippable",
+   "evidenceUrl": null
+  },
+  {
+   "id": "CL-82",
+   "tag": null,
+   "shippable": "shippable",
+   "evidenceUrl": null
+  }
+ ]
+}
